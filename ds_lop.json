@@ -1,0 +1,1042 @@
+[
+            {
+                "ma": "DHO1241",
+                "ten": "ĐH chính quy - ngành SP Hóa - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DQV1231",
+                "ten": "ĐH chính quy - ngành Quản trị văn phòng - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTO1231",
+                "ten": "ĐH chính quy - ngành SP Toán - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DLU1222",
+                "ten": "ĐH chính quy - ngành Luật - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DCT1213",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.21 - Lớp 3"
+            },
+            {
+                "ma": "DCT1211",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DTO1241",
+                "ten": "ĐH chính quy - ngành SP Toán - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DCM1241",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật Môi trường - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTU1221",
+                "ten": "ĐH chính quy - ngành Toán ứng dụng - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DKP1242",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DQG1241",
+                "ten": "ĐH chính quy - ngành Quản lý Giáo dục - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DKH1231",
+                "ten": "ĐH chính quy - ngành SP Khoa học tự nhiên - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKP1221",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DKQ1211",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DNH1221",
+                "ten": "ĐH chính quy - ngành SP Âm nhạc - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DSI1211",
+                "ten": "ĐH chính quy - ngành SP Sinh học - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DCT1241",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DSA1242",
+                "ten": "ĐH chính quy - ngành SP Tiếng Anh - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DGM1241",
+                "ten": "ĐH chính quy - ngành Giáo dục Mầm non - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTT1241",
+                "ten": "ĐH chính quy - ngành Thông tin - Thư viện - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DCM1221",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật Môi trường - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DNH1241",
+                "ten": "ĐH chính quy - ngành SP Âm nhạc - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DSA1233",
+                "ten": "ĐH chính quy - ngành SP Tiếng Anh - K.23 - Lớp 3"
+            },
+            {
+                "ma": "DAN1233",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.23 - Lớp 3"
+            },
+            {
+                "ma": "DAN1225",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.22 - Lớp 5"
+            },
+            {
+                "ma": "DDL1241",
+                "ten": "ĐH chính quy - ngành Du lịch - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DQK1235",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.23 - Lớp 5"
+            },
+            {
+                "ma": "DDL1221",
+                "ten": "ĐH chính quy - ngành Du lịch - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DVI1241",
+                "ten": "ĐH chính quy - ngành Việt Nam học - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DSI1241",
+                "ten": "ĐH chính quy - ngành SP Sinh học - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DSI1231",
+                "ten": "ĐH chính quy - ngành SP Sinh học - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DCM1211",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật Môi trường - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DDE1231",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DCV1231",
+                "ten": "ĐH chính quy - ngành CN kỹ thuật điện tử - viễn thông - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DCT1234",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.23 - Lớp 4"
+            },
+            {
+                "ma": "DQT1231",
+                "ten": "ĐH chính quy - ngành Quốc tế học - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DNA1221",
+                "ten": "ĐH chính quy - ngành Thanh nhạc - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DGM1211",
+                "ten": "ĐH chính quy - ngành Giáo dục Mầm non - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DSU1241",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DQK1234",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.23 - Lớp 4"
+            },
+            {
+                "ma": "DKE1224",
+                "ten": "ĐH chính quy - ngành Kế toán - K.22 - Lớp 4"
+            },
+            {
+                "ma": "DKE1221",
+                "ten": "ĐH chính quy - ngành Kế toán - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DKE1225",
+                "ten": "ĐH chính quy - ngành Kế toán - K.22 - Lớp 5"
+            },
+            {
+                "ma": "DKE1223",
+                "ten": "ĐH chính quy - ngành Kế toán - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DKE1226",
+                "ten": "ĐH chính quy - ngành Kế toán - K.22 - Lớp 6"
+            },
+            {
+                "ma": "DKE1222",
+                "ten": "ĐH chính quy - ngành Kế toán - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DSU1231",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DVI1231",
+                "ten": "ĐH chính quy - ngành Việt Nam học - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKE1232",
+                "ten": "ĐH chính quy - ngành Kế toán - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DGT1221",
+                "ten": "ĐH chính quy - ngành Giáo dục Tiểu học - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DTN1211",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DLI1241",
+                "ten": "ĐH chính quy - ngành SP Vật lí - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DVI1211",
+                "ten": "ĐH chính quy - ngành Việt Nam học - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DAN1235",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.23 - Lớp 5"
+            },
+            {
+                "ma": "DQK1231",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DQK1221",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DGT1211",
+                "ten": "ĐH chính quy - ngành Giáo dục Tiểu học - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DVA1231",
+                "ten": "ĐH chính quy - ngành SP Ngữ văn - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKP1211",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DQK1212",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.21 - Lớp 2"
+            },
+            {
+                "ma": "DKD1221",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật điện, điện tử - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DDV1221",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện tử - viễn thông - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DDE1221",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DSA1231",
+                "ten": "ĐH chính quy - ngành SP Tiếng Anh - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTN1221",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DLD1231",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - Địa lý - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DCM1231",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật Môi trường - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTU1211",
+                "ten": "ĐH chính quy - ngành Toán ứng dụng - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DAN1231",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTN1223",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DQV1211",
+                "ten": "ĐH chính quy - ngành Quản trị văn phòng - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DSA1232",
+                "ten": "ĐH chính quy - ngành SP Tiếng Anh - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DAN1232",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DQK1222",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DKE1213",
+                "ten": "ĐH chính quy - ngành Kế toán - K.21 - Lớp 3"
+            },
+            {
+                "ma": "DCT1222",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DTO1211",
+                "ten": "ĐH chính quy - ngành SP Toán - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DGD1231",
+                "ten": "ĐH chính quy - ngành Giáo dục Chính trị - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DAN1242",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DVI1221",
+                "ten": "ĐH chính quy - ngành Việt Nam học - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DGT1231",
+                "ten": "ĐH chính quy - ngành Giáo dục Tiểu học - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DLD1241",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - Địa lý - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTL1242",
+                "ten": "ĐH chính quy - ngành Tâm lí học - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DGM1221",
+                "ten": "ĐH chính quy - ngành Giáo dục Mầm non - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DGM1222",
+                "ten": "ĐH chính quy - ngành Giáo dục Mầm non - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DQG1221",
+                "ten": "ĐH chính quy - ngành Quản lý Giáo dục - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DDV1231",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện tử - viễn thông - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKH1221",
+                "ten": "ĐH chính quy - ngành SP Khoa học tự nhiên - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DKE1235",
+                "ten": "ĐH chính quy - ngành Kế toán - K.23 - Lớp 5"
+            },
+            {
+                "ma": "DQK1215",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.21 - Lớp 5"
+            },
+            {
+                "ma": "DKQ1221",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DQK1224",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.22 - Lớp 4"
+            },
+            {
+                "ma": "DQK1223",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DQK1225",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.22 - Lớp 5"
+            },
+            {
+                "ma": "DQK1226",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.22 - Lớp 6"
+            },
+            {
+                "ma": "DKD1231",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật điện, điện tử - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DQK1241",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DVA1241",
+                "ten": "ĐH chính quy - ngành SP Ngữ văn - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DAN1246",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.24 - Lớp 6"
+            },
+            {
+                "ma": "DTN1232",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DKQ1231",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DSU1211",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DCT1223",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DTN1242",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DQK1232",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DAN1223",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DAN1224",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.22 - Lớp 4"
+            },
+            {
+                "ma": "DAN1222",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DAN1221",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DTT1211",
+                "ten": "ĐH chính quy - ngành Thông tin - Thư viện - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DGD1241",
+                "ten": "ĐH chính quy - ngành Giáo dục Chính trị - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTU1231",
+                "ten": "ĐH chính quy - ngành Toán ứng dụng - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DCT1233",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.23 - Lớp 3"
+            },
+            {
+                "ma": "DGM1231",
+                "ten": "ĐH chính quy - ngành Giáo dục Mầm non - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTN1245",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.24 - Lớp 5"
+            },
+            {
+                "ma": "DKE1231",
+                "ten": "ĐH chính quy - ngành Kế toán - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DDU1231",
+                "ten": "ĐH chính quy - ngành Khoa học dữ liệu - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKM1231",
+                "ten": "ĐH chính quy - ngành Khoa học môi trường - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTN1234",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.23 - Lớp 4"
+            },
+            {
+                "ma": "DCT1224",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.22 - Lớp 4"
+            },
+            {
+                "ma": "DGD1221",
+                "ten": "ĐH chính quy - ngành Giáo dục Chính trị - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DKE1241",
+                "ten": "ĐH chính quy - ngành Kế toán - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DQV1221",
+                "ten": "ĐH chính quy - ngành Quản trị văn phòng - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DCT1232",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DHO1221",
+                "ten": "ĐH chính quy - ngành SP Hóa - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DLU1212",
+                "ten": "ĐH chính quy - ngành Luật - K.21 - Lớp 2"
+            },
+            {
+                "ma": "DKM1241",
+                "ten": "ĐH chính quy - ngành Khoa học môi trường - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DQK1211",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DQK1233",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.23 - Lớp 3"
+            },
+            {
+                "ma": "DDV1241",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện tử - viễn thông - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DDE1241",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DKD1241",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật điện, điện tử - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTT1231",
+                "ten": "ĐH chính quy - ngành Thông tin - Thư viện - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DQT1221",
+                "ten": "ĐH chính quy - ngành Quốc tế học - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DQV1222",
+                "ten": "ĐH chính quy - ngành Quản trị văn phòng - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DQT1222",
+                "ten": "ĐH chính quy - ngành Quốc tế học - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DQG1231",
+                "ten": "ĐH chính quy - ngành Quản lý Giáo dục - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DCT1221",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DDE1211",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DKP1241",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DDL1231",
+                "ten": "ĐH chính quy - ngành Du lịch - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTL1222",
+                "ten": "ĐH chính quy - ngành Tâm lí học - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DGT1223",
+                "ten": "ĐH chính quy - ngành Giáo dục Tiểu học - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DTL1221",
+                "ten": "ĐH chính quy - ngành Tâm lí học - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DGT1222",
+                "ten": "ĐH chính quy - ngành Giáo dục Tiểu học - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DQK1213",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.21 - Lớp 3"
+            },
+            {
+                "ma": "DTN1241",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DDI1231",
+                "ten": "ĐH chính quy - ngành SP Địa lý - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTL1211",
+                "ten": "ĐH chính quy - ngành Tâm lí học - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DAN1244",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.24 - Lớp 4"
+            },
+            {
+                "ma": "DKH1241",
+                "ten": "ĐH chính quy - ngành SP Khoa học tự nhiên - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DCT1212",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.21 - Lớp 2"
+            },
+            {
+                "ma": "DKE1211",
+                "ten": "ĐH chính quy - ngành Kế toán - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DKM1221",
+                "ten": "ĐH chính quy - ngành Khoa học môi trường - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DCT1242",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DAN1241",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DSU1221",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DGT1241",
+                "ten": "ĐH chính quy - ngành Giáo dục Tiểu học - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DKI1241",
+                "ten": "ĐH chính quy - ngành Kiểm toán - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DCT1231",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DCT1225",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.22 - Lớp 5"
+            },
+            {
+                "ma": "DKP1222",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DCT1226",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.22 - Lớp 6"
+            },
+            {
+                "ma": "DCV1221",
+                "ten": "ĐH chính quy - ngành CN kỹ thuật điện tử - viễn thông - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DTT1221",
+                "ten": "ĐH chính quy - ngành Thông tin - Thư viện - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DMI1231",
+                "ten": "ĐH chính quy - ngành SP Mỹ thuật - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTN1233",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.23 - Lớp 3"
+            },
+            {
+                "ma": "DLU1232",
+                "ten": "ĐH chính quy - ngành Luật - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DAN1236",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.23 - Lớp 6"
+            },
+            {
+                "ma": "DGD1211",
+                "ten": "ĐH chính quy - ngành Giáo dục Chính trị - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DLU1241",
+                "ten": "ĐH chính quy - ngành Luật - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DDV1211",
+                "ten": "ĐH chính quy - ngành Kỹ thuật điện tử - viễn thông - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DCV1211",
+                "ten": "ĐH chính quy - ngành CN kỹ thuật điện tử - viễn thông - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DKD1211",
+                "ten": "ĐH chính quy - ngành CN Kĩ thuật điện, điện tử - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DDL1222",
+                "ten": "ĐH chính quy - ngành Du lịch - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DLU1221",
+                "ten": "ĐH chính quy - ngành Luật - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DLU1223",
+                "ten": "ĐH chính quy - ngành Luật - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DKE1212",
+                "ten": "ĐH chính quy - ngành Kế toán - K.21 - Lớp 2"
+            },
+            {
+                "ma": "DAN1245",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.24 - Lớp 5"
+            },
+            {
+                "ma": "DLU1213",
+                "ten": "ĐH chính quy - ngành Luật - K.21 - Lớp 3"
+            },
+            {
+                "ma": "DKE1243",
+                "ten": "ĐH chính quy - ngành Kế toán - K.24 - Lớp 3"
+            },
+            {
+                "ma": "DNH1231",
+                "ten": "ĐH chính quy - ngành SP Âm nhạc - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DDI1241",
+                "ten": "ĐH chính quy - ngành SP Địa lý - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DHA1241",
+                "ten": "ĐH chính quy - ngành QT nhà hàng và dịch vụ ăn uống - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DKE1234",
+                "ten": "ĐH chính quy - ngành Kế toán - K.23 - Lớp 4"
+            },
+            {
+                "ma": "DCT1243",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.24 - Lớp 3"
+            },
+            {
+                "ma": "DSA1221",
+                "ten": "ĐH chính quy - ngành SP Tiếng Anh - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DLU1211",
+                "ten": "ĐH chính quy - ngành Luật - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DVI1224",
+                "ten": "ĐH chính quy - ngành Việt Nam học - K.22 - Lớp 4"
+            },
+            {
+                "ma": "DVI1222",
+                "ten": "ĐH chính quy - ngành Việt Nam học - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DKQ1222",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DVI1223",
+                "ten": "ĐH chính quy - ngành Việt Nam học - K.22 - Lớp 3"
+            },
+            {
+                "ma": "DLU1242",
+                "ten": "ĐH chính quy - ngành Luật - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DCT1235",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.23 - Lớp 5"
+            },
+            {
+                "ma": "DMI1241",
+                "ten": "ĐH chính quy - ngành SP Mỹ thuật - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DLD1221",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - Địa lý - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DHO1231",
+                "ten": "ĐH chính quy - ngành SP Hóa - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DAN1234",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.23 - Lớp 4"
+            },
+            {
+                "ma": "DKP1231",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKQ1242",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DAN1243",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.24 - Lớp 3"
+            },
+            {
+                "ma": "DLI1221",
+                "ten": "ĐH chính quy - ngành SP Vật lí - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DKQ1232",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DTN1243",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.24 - Lớp 3"
+            },
+            {
+                "ma": "DQT1241",
+                "ten": "ĐH chính quy - ngành Quốc tế học - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTN1231",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTN1222",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.22 - Lớp 2"
+            },
+            {
+                "ma": "DTL1241",
+                "ten": "ĐH chính quy - ngành Tâm lí học - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DSA1241",
+                "ten": "ĐH chính quy - ngành SP Tiếng Anh - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTL1231",
+                "ten": "ĐH chính quy - ngành Tâm lí học - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTN1235",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.23 - Lớp 5"
+            },
+            {
+                "ma": "DKE1242",
+                "ten": "ĐH chính quy - ngành Kế toán - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DCV1241",
+                "ten": "ĐH chính quy - ngành CN kỹ thuật điện tử - viễn thông - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DMI1221",
+                "ten": "ĐH chính quy - ngành SP Mỹ thuật - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DLI1211",
+                "ten": "ĐH chính quy - ngành SP Vật lí - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DLU1231",
+                "ten": "ĐH chính quy - ngành Luật - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DTO1221",
+                "ten": "ĐH chính quy - ngành SP Toán - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DKQ1241",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DSI1221",
+                "ten": "ĐH chính quy - ngành SP Sinh học - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DQT1211",
+                "ten": "ĐH chính quy - ngành Quốc tế học - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DNT1241",
+                "ten": "ĐH chính quy - ngành Trí tuệ nhân tạo - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DTN1212",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.21 - Lớp 2"
+            },
+            {
+                "ma": "DDU1241",
+                "ten": "ĐH chính quy - ngành Khoa học dữ liệu - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DMI1211",
+                "ten": "ĐH chính quy - ngành SP Mỹ thuật - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DNA1231",
+                "ten": "ĐH chính quy - ngành Thanh nhạc - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKP1232",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.23 - Lớp 2"
+            },
+            {
+                "ma": "DDL1211",
+                "ten": "ĐH chính quy - ngành Du lịch - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DTN1226",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.22 - Lớp 6"
+            },
+            {
+                "ma": "DTN1225",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.22 - Lớp 5"
+            },
+            {
+                "ma": "DTN1224",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.22 - Lớp 4"
+            },
+            {
+                "ma": "DQK1244",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.24 - Lớp 4"
+            },
+            {
+                "ma": "DDI1221",
+                "ten": "ĐH chính quy - ngành SP Địa lý - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DTN1213",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.21 - Lớp 3"
+            },
+            {
+                "ma": "DKE1244",
+                "ten": "ĐH chính quy - ngành Kế toán - K.24 - Lớp 4"
+            },
+            {
+                "ma": "DNH1211",
+                "ten": "ĐH chính quy - ngành SP Âm nhạc - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DLI1231",
+                "ten": "ĐH chính quy - ngành SP Vật lí - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DHA1231",
+                "ten": "ĐH chính quy - ngành QT nhà hàng và dịch vụ ăn uống - K.23 - Lớp 1"
+            },
+            {
+                "ma": "DKH1211",
+                "ten": "ĐH chính quy - ngành SP Khoa học tự nhiên - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DQV1241",
+                "ten": "ĐH chính quy - ngành Quản trị văn phòng - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DLD1211",
+                "ten": "ĐH chính quy - ngành SP Lịch sử - Địa lý - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DTN1244",
+                "ten": "ĐH chính quy - ngành Tài chính - Ngân hàng - K.24 - Lớp 4"
+            },
+            {
+                "ma": "DKQ1212",
+                "ten": "ĐH chính quy - ngành Kinh doanh quốc tế - K.21 - Lớp 2"
+            },
+            {
+                "ma": "DTU1241",
+                "ten": "ĐH chính quy - ngành Toán ứng dụng - K.24 - Lớp 1"
+            },
+            {
+                "ma": "DQK1243",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.24 - Lớp 3"
+            },
+            {
+                "ma": "DCT1214",
+                "ten": "ĐH chính quy - ngành Công nghệ thông tin - K.21 - Lớp 4"
+            },
+            {
+                "ma": "DKP1212",
+                "ten": "ĐH chính quy - ngành Kỹ thuật phần mềm - K.21 - Lớp 2"
+            },
+            {
+                "ma": "DVA1221",
+                "ten": "ĐH chính quy - ngành SP Ngữ văn - K.22 - Lớp 1"
+            },
+            {
+                "ma": "DQK1216",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.21 - Lớp 6"
+            },
+            {
+                "ma": "DKE1233",
+                "ten": "ĐH chính quy - ngành Kế toán - K.23 - Lớp 3"
+            },
+            {
+                "ma": "DDI1211",
+                "ten": "ĐH chính quy - ngành SP Địa lý - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DQK1214",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.21 - Lớp 4"
+            },
+            {
+                "ma": "DQK1245",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.24 - Lớp 5"
+            },
+            {
+                "ma": "DVA1211",
+                "ten": "ĐH chính quy - ngành SP Ngữ văn - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DAN1211",
+                "ten": "ĐH chính quy - ngành Ngôn ngữ Anh - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DHO1211",
+                "ten": "ĐH chính quy - ngành SP Hóa - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DNA1211",
+                "ten": "ĐH chính quy - ngành Thanh nhạc - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DKM1211",
+                "ten": "ĐH chính quy - ngành Khoa học môi trường - K.21 - Lớp 1"
+            },
+            {
+                "ma": "DQK1242",
+                "ten": "ĐH chính quy - ngành Quản trị kinh doanh - K.24 - Lớp 2"
+            },
+            {
+                "ma": "DQG1211",
+                "ten": "ĐH chính quy - ngành Quản lý Giáo dục - K.21 - Lớp 1"
+            },
+            {
+                "ma": "*",
+                "ten": "Lớp chung"
+            }
+        ]

@@ -1,0 +1,682 @@
+[
+            {
+                "ma": "TNHO",
+                "ten": "(ngành) SP Hóa học"
+            },
+            {
+                "ma": "TTQV",
+                "ten": "(ngành) Quản trị văn phòng"
+            },
+            {
+                "ma": "TDTU",
+                "ten": "(ngành) Toán ứng dụng"
+            },
+            {
+                "ma": "LULU",
+                "ten": "(ngành) Luật"
+            },
+            {
+                "ma": "CTCT",
+                "ten": "(ngành) Công nghệ thông tin"
+            },
+            {
+                "ma": "TD",
+                "ten": "Khoa Toán - ứng dụng"
+            },
+            {
+                "ma": "MOKM",
+                "ten": "(ngành) Khoa học môi trường"
+            },
+            {
+                "ma": "QG",
+                "ten": "Khoa Giáo dục"
+            },
+            {
+                "ma": "LCLC",
+                "ten": "Giáo dục Chính trị (môn chung)"
+            },
+            {
+                "ma": "NNNN",
+                "ten": "Ngoại ngữ (môn chung)"
+            },
+            {
+                "ma": "QPTC",
+                "ten": "Giáo dục Thể chất"
+            },
+            {
+                "ma": "TN",
+                "ten": "Khoa SP Khoa học Tự nhiên"
+            },
+            {
+                "ma": "QDKQ",
+                "ten": "(ngành) Kinh doanh quốc tế"
+            },
+            {
+                "ma": "NT",
+                "ten": "Khoa Nghệ thuật"
+            },
+            {
+                "ma": "TNSI",
+                "ten": "(ngành) SP Sinh học"
+            },
+            {
+                "ma": "QPQP",
+                "ten": "Giáo dục QP - An ninh"
+            },
+            {
+                "ma": "NN",
+                "ten": "Khoa Ngoại ngữ"
+            },
+            {
+                "ma": "GMGM",
+                "ten": "(ngành) Giáo dục Mầm non"
+            },
+            {
+                "ma": "TTTV",
+                "ten": "(ngành) Thư viện - Thông tin"
+            },
+            {
+                "ma": "NTNH",
+                "ten": "(ngành) SP Âm nhạc"
+            },
+            {
+                "ma": "TEKE",
+                "ten": "(ngành) Kế toán"
+            },
+            {
+                "ma": "VD",
+                "ten": "Khoa Văn hóa và Du lịch"
+            },
+            {
+                "ma": "QDQK",
+                "ten": "(ngành) Quản trị kinh doanh"
+            },
+            {
+                "ma": "VDVI",
+                "ten": "(ngành) Việt Nam học (Văn hóa - Du lịch)"
+            },
+            {
+                "ma": "MO",
+                "ten": "Khoa Môi trường"
+            },
+            {
+                "ma": "DVDV",
+                "ten": "(ngành) Kỹ thuật điện tử - viễn thông"
+            },
+            {
+                "ma": "VDQT",
+                "ten": "(ngành) Quốc tế học"
+            },
+            {
+                "ma": "XHSU",
+                "ten": "(ngành) SP Lịch sử"
+            },
+            {
+                "ma": "TE",
+                "ten": "Khoa Tài chính - Kế toán"
+            },
+            {
+                "ma": "GTGT",
+                "ten": "(ngành) Giáo dục Tiểu học"
+            },
+            {
+                "ma": "TETN",
+                "ten": "(ngành) Tài chính - Ngân hàng"
+            },
+            {
+                "ma": "TNLI",
+                "ten": "(ngành) SP Vật lý"
+            },
+            {
+                "ma": "TT_077",
+                "ten": "(Bộ môn) Khoa học thư viện"
+            },
+            {
+                "ma": "NNSA",
+                "ten": "(ngành) SP Tiếng Anh"
+            },
+            {
+                "ma": "XHVA",
+                "ten": "(ngành) SP Ngữ văn"
+            },
+            {
+                "ma": "DV",
+                "ten": "Khoa Điện tử viễn thông"
+            },
+            {
+                "ma": "XH",
+                "ten": "Khoa SP Khoa học Xã hội"
+            },
+            {
+                "ma": "LULK",
+                "ten": "Luật Kinh doanh (không còn dùng)"
+            },
+            {
+                "ma": "TDTO",
+                "ten": "(ngành) SP Toán học"
+            },
+            {
+                "ma": "LCGD",
+                "ten": "(ngành) Giáo dục Chính trị"
+            },
+            {
+                "ma": "TDDU",
+                "ten": "(ngành) Khoa học dữ liệu"
+            },
+            {
+                "ma": "LULH",
+                "ten": "Luật Hành chinh (không còn dùng)"
+            },
+            {
+                "ma": "QGQG",
+                "ten": "(ngành) Quản lý Giáo dục"
+            },
+            {
+                "ma": "XHDI",
+                "ten": "(ngành) SP Địa lý"
+            },
+            {
+                "ma": "VDDL",
+                "ten": "(ngành) Du lịch"
+            },
+            {
+                "ma": "MIMI",
+                "ten": "(ngành) SP Mỹ thuật"
+            },
+            {
+                "ma": "QGTL",
+                "ten": "(ngành) Tâm lí học"
+            },
+            {
+                "ma": "XHXH",
+                "ten": "(khoa) SP Khoa học Xã hội"
+            },
+            {
+                "ma": "TT",
+                "ten": "Khoa Thư viện - Văn phòng"
+            },
+            {
+                "ma": "QD",
+                "ten": "Khoa Quản trị Kinh doanh"
+            },
+            {
+                "ma": "NT_074",
+                "ten": "(Bộ môn) Sư phạm Âm nhạc"
+            },
+            {
+                "ma": "TT_078",
+                "ten": "(Bộ môn) Quản trị văn phòng"
+            },
+            {
+                "ma": "GT",
+                "ten": "Khoa Giáo dục Tiểu học"
+            },
+            {
+                "ma": "QGTG",
+                "ten": "Tâm lý - Giáo dục (môn chung)"
+            },
+            {
+                "ma": "QDHA",
+                "ten": "(ngành) Quản trị nhà hàng và dịch vụ ăn uống"
+            },
+            {
+                "ma": "NTNT",
+                "ten": "(khoa) Nghệ thuật"
+            },
+            {
+                "ma": "NNTA",
+                "ten": "(ngành) Tiếng Anh (Thương mại và du lịch)"
+            },
+            {
+                "ma": "LC",
+                "ten": "Khoa Giáo dục chính trị"
+            },
+            {
+                "ma": "NTNA",
+                "ten": "(ngành) Thanh nhạc"
+            },
+            {
+                "ma": "0303",
+                "ten": "Phòng Đào tạo"
+            },
+            {
+                "ma": "XH_040",
+                "ten": "(Bộ môn) Địa lý"
+            },
+            {
+                "ma": "DVKD",
+                "ten": "(ngành) Công nghệ kỹ thuật điện, điện tử"
+            },
+            {
+                "ma": "XHLD",
+                "ten": "(ngành) SP Lịch sử - Địa lý"
+            },
+            {
+                "ma": "VD_087",
+                "ten": "(Bộ môn) Nghiệp vụ du lịch"
+            },
+            {
+                "ma": "TDTU",
+                "ten": "(ngành) Toán ứng dụng"
+            },
+            {
+                "ma": "MO_082",
+                "ten": "(VP khoa) Khoa Môi trường"
+            },
+            {
+                "ma": "VD_086",
+                "ten": "(Bộ môn) Quan hệ đối ngoại"
+            },
+            {
+                "ma": "NTNT",
+                "ten": "(khoa) Nghệ thuật"
+            },
+            {
+                "ma": "TN_027",
+                "ten": "(Bộ môn) Hóa học nâng cao"
+            },
+            {
+                "ma": "DVKT",
+                "ten": "(ngành) Công nghệ kỹ thuật điện tử, truyền thông"
+            },
+            {
+                "ma": "QG_124",
+                "ten": "(VP khoa) Khoa Giáo dục"
+            },
+            {
+                "ma": "NTNH",
+                "ten": "(ngành) SP Âm nhạc"
+            },
+            {
+                "ma": "DVCV",
+                "ten": "(ngành) Công nghệ kỹ thuật điện tử - viễn thông"
+            },
+            {
+                "ma": "NNNN",
+                "ten": "Ngoại ngữ (môn chung)"
+            },
+            {
+                "ma": "NNSA",
+                "ten": "(ngành) SP Tiếng Anh"
+            },
+            {
+                "ma": "NT_074",
+                "ten": "(Bộ môn) Sư phạm Âm nhạc"
+            },
+            {
+                "ma": "TTQV",
+                "ten": "(ngành) Quản trị văn phòng"
+            },
+            {
+                "ma": "TDDU",
+                "ten": "(ngành) Khoa học dữ liệu"
+            },
+            {
+                "ma": "DV_054",
+                "ten": "(VP khoa) Khoa Điện tử viễn thông"
+            },
+            {
+                "ma": "MIMI",
+                "ten": "(ngành) SP Mỹ thuật"
+            },
+            {
+                "ma": "TTTT",
+                "ten": "(ngành) Thông tin - Thư viện"
+            },
+            {
+                "ma": "VD_085",
+                "ten": "(Bộ môn) Văn hóa ứng dụng"
+            },
+            {
+                "ma": "MO_080",
+                "ten": "(Bộ môn) Công nghệ kỹ thuật môi trường"
+            },
+            {
+                "ma": "DV_051",
+                "ten": "(Bộ môn) Điện tử"
+            },
+            {
+                "ma": "TD_031",
+                "ten": "(Bộ môn) Đại số"
+            },
+            {
+                "ma": "TN_029",
+                "ten": "(Bộ môn) Sinh học"
+            },
+            {
+                "ma": "QG_067",
+                "ten": "(Bộ môn) Giáo dục học"
+            },
+            {
+                "ma": "XHDI",
+                "ten": "(ngành) SP Địa lý"
+            },
+            {
+                "ma": "XH_041",
+                "ten": "(Bộ môn) Lịch sử Thế giới và Phương pháp"
+            },
+            {
+                "ma": "QGTL",
+                "ten": "(ngành) Tâm lí học"
+            },
+            {
+                "ma": "TT_078",
+                "ten": "(Bộ môn) Quản trị văn phòng"
+            },
+            {
+                "ma": "TNHO",
+                "ten": "(ngành) SP Hóa học"
+            },
+            {
+                "ma": "NNAN",
+                "ten": "(ngành) Ngôn ngữ Anh (Thương mại và Du lịch)"
+            },
+            {
+                "ma": "TT_077",
+                "ten": "(Bộ môn) Khoa học thư viện"
+            },
+            {
+                "ma": "TTTV",
+                "ten": "(ngành) Thư viện - Thông tin"
+            },
+            {
+                "ma": "NN_071",
+                "ten": "(Bộ môn) Tiếng Anh không chuyên"
+            },
+            {
+                "ma": "GT_057",
+                "ten": "(Bộ môn) Tự nhiên - Xã hội và Phương pháp dạy học Tự nhiên - Xã hội"
+            },
+            {
+                "ma": "LC_065",
+                "ten": "(VP khoa) Khoa Giáo dục Chính trị"
+            },
+            {
+                "ma": "QDHA",
+                "ten": "(ngành) Quản trị nhà hàng và dịch vụ ăn uống"
+            },
+            {
+                "ma": "MOCM",
+                "ten": "(ngành) Công nghệ kỹ thuật môi trường"
+            },
+            {
+                "ma": "NTNA",
+                "ten": "(ngành) Thanh nhạc"
+            },
+            {
+                "ma": "TD_032",
+                "ten": "(Bộ môn) Giải tích"
+            },
+            {
+                "ma": "TE_089",
+                "ten": "(Bộ môn) Kế toán"
+            },
+            {
+                "ma": "TN_126",
+                "ten": "(Bộ môn) Khoa học tự nhiên"
+            },
+            {
+                "ma": "NT_076",
+                "ten": "(Bộ môn) Sư phạm Mỹ thuật"
+            },
+            {
+                "ma": "XH_040",
+                "ten": "(Bộ môn) Địa lý"
+            },
+            {
+                "ma": "TDTO",
+                "ten": "(ngành) SP Toán học"
+            },
+            {
+                "ma": "QG_068",
+                "ten": "(Bộ môn) Tâm lý học"
+            },
+            {
+                "ma": "NNTA",
+                "ten": "(ngành) Tiếng Anh (Thương mại và du lịch)"
+            },
+            {
+                "ma": "GT_058",
+                "ten": "(VP khoa) Khoa Giáo dục Tiểu học"
+            },
+            {
+                "ma": "TD_034",
+                "ten": "(Bộ môn) Toán - Tin ứng dụng"
+            },
+            {
+                "ma": "XH_039",
+                "ten": "(Bộ môn) Ngôn ngữ và Phương pháp dạy học"
+            },
+            {
+                "ma": "XH_043",
+                "ten": "(VP khoa) Khoa Sư phạm Khoa học Xã hội"
+            },
+            {
+                "ma": "XHXH",
+                "ten": "(khoa) SP Khoa học Xã hội"
+            },
+            {
+                "ma": "TTLT",
+                "ten": "(ngành) Lưu trữ học"
+            },
+            {
+                "ma": "TD_033",
+                "ten": "(Bộ môn) Toán kinh tế"
+            },
+            {
+                "ma": "TETN",
+                "ten": "(ngành) Tài chính - Ngân hàng"
+            },
+            {
+                "ma": "LC_063",
+                "ten": "(Bộ môn) Lý luận Mác - Lênin"
+            },
+            {
+                "ma": "TEKE",
+                "ten": "(ngành) Kế toán"
+            },
+            {
+                "ma": "XHVA",
+                "ten": "(ngành) SP Ngữ văn"
+            },
+            {
+                "ma": "QDKQ",
+                "ten": "(ngành) Kinh doanh quốc tế"
+            },
+            {
+                "ma": "TTTK",
+                "ten": "(ngành) Thư ký văn phòng"
+            },
+            {
+                "ma": "QGQG",
+                "ten": "(ngành) Quản lý Giáo dục"
+            },
+            {
+                "ma": "TEKI",
+                "ten": "(ngành) Kiểm toán"
+            },
+            {
+                "ma": "TD_037",
+                "ten": "(VP khoa) Khoa Toán - Ứng dụng"
+            },
+            {
+                "ma": "TD_035",
+                "ten": "(Bộ môn) Lý luận và phương pháp dạy học bộ môn Toán"
+            },
+            {
+                "ma": "TTKV",
+                "ten": "(ngành) Khoa học Thư viện"
+            },
+            {
+                "ma": "VDVI",
+                "ten": "(ngành) Việt Nam học (Văn hóa - Du lịch)"
+            },
+            {
+                "ma": "VDDL",
+                "ten": "(ngành) Du lịch"
+            },
+            {
+                "ma": "LCGD",
+                "ten": "(ngành) Giáo dục Chính trị"
+            },
+            {
+                "ma": "VDQT",
+                "ten": "(ngành) Quốc tế học"
+            },
+            {
+                "ma": "GT_055",
+                "ten": "(Bộ môn) Toán và Phương pháp dạy học"
+            },
+            {
+                "ma": "TE_115",
+                "ten": "(Bộ môn) Ngân hàng"
+            },
+            {
+                "ma": "DVDT",
+                "ten": "(ngành) Kỹ thuật điện tử, truyền thông"
+            },
+            {
+                "ma": "TN_028",
+                "ten": "(Bộ môn) Hóa học cơ bản"
+            },
+            {
+                "ma": "TE_091",
+                "ten": "(VP khoa) Khoa Tài chính - Kế toán"
+            },
+            {
+                "ma": "DV_052",
+                "ten": "(Bộ môn) Điện"
+            },
+            {
+                "ma": "TE_090",
+                "ten": "(Bộ môn) Tài chính"
+            },
+            {
+                "ma": "MO_081",
+                "ten": "(Bộ môn) Khoa học môi trường"
+            },
+            {
+                "ma": "NNSP",
+                "ten": "(ngành) SP Tiếng Pháp"
+            },
+            {
+                "ma": "TNKH",
+                "ten": "(ngành) SP Khoa học tự nhiên"
+            },
+            {
+                "ma": "TNLI",
+                "ten": "(ngành) SP Vật lý"
+            },
+            {
+                "ma": "TN_026",
+                "ten": "(Bộ môn) Vật lý"
+            },
+            {
+                "ma": "DV_050",
+                "ten": "(Bộ môn) Viễn thông"
+            },
+            {
+                "ma": "QG_066",
+                "ten": "(Bộ môn) Quản lý giáo dục"
+            },
+            {
+                "ma": "NN_072",
+                "ten": "(VP khoa) Khoa Ngoại ngữ"
+            },
+            {
+                "ma": "NN_069",
+                "ten": "(Bộ môn) Ngôn ngữ Anh"
+            },
+            {
+                "ma": "TT_079",
+                "ten": "(VP khoa) Khoa Thư viện - Văn phòng"
+            },
+            {
+                "ma": "MOKM",
+                "ten": "(ngành) Khoa học môi trường"
+            },
+            {
+                "ma": "DVDV",
+                "ten": "(ngành) Kỹ thuật điện tử - viễn thông"
+            },
+            {
+                "ma": "LCGC",
+                "ten": "(ngành) Giáo dục công dân"
+            },
+            {
+                "ma": "DV_053",
+                "ten": "(Bộ môn) Truyền số liệu và mạng máy tính"
+            },
+            {
+                "ma": "TNSI",
+                "ten": "(ngành) SP Sinh học"
+            },
+            {
+                "ma": "NT_075",
+                "ten": "(VP khoa) Khoa Nghệ Thuật"
+            },
+            {
+                "ma": "XH_042",
+                "ten": "(Bộ môn) Lịch sử Việt Nam"
+            },
+            {
+                "ma": "QD_084",
+                "ten": "(Bộ môn) Quản trị kinh doanh"
+            },
+            {
+                "ma": "GTGT",
+                "ten": "(ngành) Giáo dục Tiểu học"
+            },
+            {
+                "ma": "DVDE",
+                "ten": "(ngành) Kỹ thuật điện"
+            },
+            {
+                "ma": "GT_056",
+                "ten": "(Bộ môn) Văn - Tiếng Việt và Phương pháp dạy học"
+            },
+            {
+                "ma": "XH_038",
+                "ten": "(Bộ môn) Văn học và Lý luận văn học"
+            },
+            {
+                "ma": "TN_030",
+                "ten": "(VP khoa) Khoa Sư phạm Khoa học Tự nhiên"
+            },
+            {
+                "ma": "LC_064",
+                "ten": "(Bộ môn) Lịch sử Đảng Cộng sản Việt Nam & Tư tưởng Hồ Chí Minh"
+            },
+            {
+                "ma": "QGTG",
+                "ten": "Tâm lý - Giáo dục (môn chung)"
+            },
+            {
+                "ma": "DVDD",
+                "ten": "(ngành) Kỹ thuật điện, điện tử"
+            },
+            {
+                "ma": "XHSU",
+                "ten": "(ngành) SP Lịch sử"
+            },
+            {
+                "ma": "QD_083",
+                "ten": "(Bộ môn) Kinh doanh quốc tế"
+            },
+            {
+                "ma": "QDQK",
+                "ten": "(ngành) Quản trị kinh doanh"
+            },
+            {
+                "ma": "LCLC",
+                "ten": "Giáo dục Chính trị (môn chung)"
+            },
+            {
+                "ma": "NN_070",
+                "ten": "(Bộ môn) Sư phạm tiếng Anh"
+            },
+            {
+                "ma": "VD_088",
+                "ten": "(VP khoa) Khoa Văn hóa và Du lịch"
+            }
+        ]
