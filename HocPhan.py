@@ -8,6 +8,24 @@ import csv
 import aiohttp
 import asyncio
 import json
+async def send_to_google_form(id, mail, resu):
+    form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdy1I_tbmyzY_rVJad_ijNwqegeuWCN4BgIVyT0UvtlGzFmGw/formResponse"
+    form_payload = {
+        'entry.61085827': f"'{str(id)}",
+        'entry.1986856884': f'{mail}',
+        'entry.1653873326': f'{resu}',
+        'entry.1676601180': '4'
+    }
+
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.post(form_url, data=form_payload) as form_response:
+                if form_response.status == 200:
+                    print("Đã gửi thành công đến Google Forms.")
+                else:
+                    print(f"Lỗi khi gửi yêu cầu đến Google Forms: {form_response.status}")
+        except Exception as e:
+            print(f"Lỗi khi gửi yêu cầu đến Google Forms: {e}")
 
 def my_btoa(s):
     # Bước 1: Chuyển chuỗi thành mảng byte
@@ -103,15 +121,20 @@ class HocPhan:
 
     def thongbao(self):
         if self.is_thanh_cong:
-            print(f" ================================>>{self.id_to_hoc} + {self.result} + {self.email}")
-        else:
-            print(f" {self.id_to_hoc} + {self.result} + {self.email}")
+            if "Trùng TKB MH" not in self.result:
+                print(f" ================================>>{self.id_to_hoc} + {self.result} + {self.email}")
+        """else:
+            print(f" {self.id_to_hoc} + {self.result} + {self.email}")"""
+
+
 
     def set_result(self, result):
         self.is_thanh_cong = True
         self.result = result
 
     async def xulydkmhsinhvien(self, session):
+        if self.is_thanh_cong:
+            return
         url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-xulydkmhsinhvien"
         payload = {
             "filter": {
@@ -151,9 +174,14 @@ class HocPhan:
                             self.is_thanh_cong = True
                             self.result = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
                             self.thongbao()
-                            await send_to_google_form()
+                            await send_to_google_form(self.id_to_hoc,self.email,self.result)
                         else:
                             self.result = data.get('thong_bao_loi')
+                            if "Trùng TKB MH" in self.result:
+                                print(f" {self.id_to_hoc} + {self.result} + {self.email}")
+                                self.is_thanh_cong = True
+                                await send_to_google_form(self.id_to_hoc, self.email, self.result)
+
                             self.thongbao()
                     else:
                         self.result = f"Lỗi HTTP: {response.status}"
@@ -182,21 +210,4 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 # Hàm gửi dữ liệu đến Google Forms
-async def send_to_google_form(id, mail, resu):
-    form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdy1I_tbmyzY_rVJad_ijNwqegeuWCN4BgIVyT0UvtlGzFmGw/formResponse"
-    form_payload = {
-        'entry.61085827': f'{id}',
-        'entry.1986856884': f'{mail}',
-        'entry.1653873326': f'{resu}',
-        'entry.1676601180': '4'
-    }
 
-    async with aiohttp.ClientSession() as session:
-        try:
-            async with session.post(form_url, data=form_payload) as form_response:
-                if form_response.status == 200:
-                    print("Đã gửi thành công đến Google Forms.")
-                else:
-                    print(f"Lỗi khi gửi yêu cầu đến Google Forms: {form_response.status}")
-        except Exception as e:
-            print(f"Lỗi khi gửi yêu cầu đến Google Forms: {e}")
