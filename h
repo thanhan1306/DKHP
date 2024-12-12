@@ -227,3 +227,183 @@
             return True
         print(response)
         return False
+import time
+import random
+import aiohttp
+import asyncio
+import logging
+
+# Cấu hình logging để theo dõi lỗi và thông báo
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+def my_btoa(s):
+    bytes_data = [ord(c) for c in s]
+    chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+    base64_result = ''
+    for i in range(0, len(bytes_data), 3):
+        byte1 = bytes_data[i]
+        byte2 = bytes_data[i + 1] if i + 1 < len(bytes_data) else 0
+        byte3 = bytes_data[i + 2] if i + 2 < len(bytes_data) else 0
+        base64_result += chars[byte1 >> 2]
+        base64_result += chars[((byte1 & 3) << 4) | (byte2 >> 4)]
+        base64_result += chars[((byte2 & 15) << 2) | (byte3 >> 6)]
+        base64_result += chars[byte3 & 63]
+    if len(bytes_data) % 3 == 1:
+        base64_result = base64_result[:-2] + '=='
+    elif len(bytes_data) % 3 == 2:
+        base64_result = base64_result[:-1] + '='
+    return base64_result
+
+def rnd(num):
+    return random.randint(1, num)
+
+def ec(str, key):
+    def rk(key):
+        P = [4, 165, 110, 3, 44, 202, 186, 28, 118, 177, 32, 94, 219, 6, 199, 27, 101, 191, 66, 115, 234, 120, 10, 236, 104, 108, 74, 247, 68, 198, 62, 203]
+        Q = key % 3 + 1
+        return [P[(key + T * Q) % len(P)] for T in range(10)]
+    Q = rk(key)[::-1]
+    R = [ord(c) for c in str]
+    T = []
+    while len(T) < len(R):
+        T.extend(Q)
+    return [U ^ T[V] for V, U in enumerate(R)]
+
+def gc(P, k):
+    if len(P) > 22:
+        P = P[:22]
+    P = P.upper()
+    offset = k
+    current_time_millis = int(time.time() * 1000)
+    Q = str(rnd(89) + 10) + str(current_time_millis - offset) + str(rnd(89) + 10) + P
+    R = rnd(31)
+    T = [R + 32] + ec(Q, R)
+    T = ''.join([chr(U) for U in T])
+    return my_btoa(T.encode('utf-8').decode("utf-8"))
+
+class HocPhan:
+    def __init__(self, id_to_hoc, email, auth):
+        self.id_to_hoc = id_to_hoc
+        self.email = email
+        self.auth = auth
+        self.is_thanh_cong = False
+        self.result = ""
+
+    def thongbao(self):
+        if self.is_thanh_cong:
+            logging.info(f"Thành công: {self.id_to_hoc} - {self.result} - {self.email}")
+        else:
+            logging.warning(f"Không thành công: {self.id_to_hoc} - {self.result} - {self.email}")
+
+    async def xulydkmhsinhvien(self, session):
+        url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-xulydkmhsinhvien"
+        payload = {
+            "filter": {
+                "id_to_hoc": self.id_to_hoc,
+                "is_checked": True,
+                "sv_nganh": 1
+            }
+        }
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Authorization": self.auth,
+            "Content-Type": "application/json",
+            "ua": f"{gc('dkmh/w-xulydkmhsinhvien', -2132)}"
+        }
+        for attempt in range(3):  # Thử tối đa 3 lần
+            try:
+                async with session.post(url, headers=headers, json=payload) as response:
+                    if response.status == 200:
+                        response_data = await response.json()
+                        data = response_data.get("data", {})
+                        if data.get("is_thanh_cong"):
+                            self.is_thanh_cong = True
+                            self.result = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
+                            return
+                        else:
+                            self.result = data.get('thong_bao_loi', "Lỗi không xác định")
+                    else:
+                        self.result = f"Lỗi HTTP: {response.status}"
+            except Exception as e:
+                self.result = f"Lỗi xảy ra: {e}"
+            await asyncio.sleep(2)  # Chờ 2 giây trước khi thử lại
+        self.thongbao()
+
+async def main():
+    hoc_phans = []
+    with open("data.txt", mode="r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            data = line.split('|')
+            if len(data) < 3:
+                logging.error(f"Dòng không hợp lệ (bỏ qua): {line}")
+                continue
+            hoc_phans.append(HocPhan(data[0], data[1], data[2]))
+
+    timeout = aiohttp.ClientTimeout(total=300)
+    semaphore = asyncio.Semaphore(5)
+
+    async def with_semaphore(coro):
+        async with semaphore:
+            return await coro
+
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        tasks = [with_semaphore(hp.xulydkmhsinhvien(session)) for hp in hoc_phans]
+        await asyncio.gather(*tasks)
+
+    for hp in hoc_phans:
+        hp.thongbao()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+async def main():
+    hoc_phans = []
+    with open("data", mode="r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+
+                # Tách dữ liệu theo dấu phẩy (hoặc thay bằng ký tự phù hợp với file của bạn)
+            data = line.split('|')
+
+            # Kiểm tra xem có đủ 3 phần tử không
+            if len(data) < 3:
+                print(f"Dòng không hợp lệ (bỏ qua): {line}")
+                continue
+
+            # Thêm vào danh sách HocPhan
+            hoc_phans.append(HocPhan(data[0], data[1], data[2]))
+
+
+    timeout = aiohttp.ClientTimeout(total=60)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        tasks = [hp.xulydkmhsinhvien(session) for hp in hoc_phans]
+        await asyncio.gather(*tasks)
+
+    for hp in hoc_phans:
+        hp.thongbao()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+# Hàm gửi dữ liệu đến Google Forms
+async def send_to_google_form(id, mail, resu):
+    form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdy1I_tbmyzY_rVJad_ijNwqegeuWCN4BgIVyT0UvtlGzFmGw/formResponse"
+    form_payload = {
+        'entry.61085827': f"'{str(id)}",
+        'entry.1986856884': f'{mail}',
+        'entry.1653873326': f'{resu}',
+        'entry.1676601180': '4'
+    }
+
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.post(form_url, data=form_payload) as form_response:
+                if form_response.status == 200:
+                    print("Đã gửi thành công đến Google Forms.")
+                else:
+                    print(f"Lỗi khi gửi yêu cầu đến Google Forms: {form_response.status}")
+        except Exception as e:
+            print(f"Lỗi khi gửi yêu cầu đến Google Forms: {e}")

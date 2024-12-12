@@ -137,6 +137,7 @@ async def send_request(id_mon, auth, email, gc, offset,idpc = "-7648466455965434
 # Hàm main để chạy các request bất đồng bộ
 async def main():
     # Giả sử bạn có những giá trị cần thiết sau
+
     id_mon = "some_id_mon"
     auth = "some_auth_token"
     idpc = "some_idpc"

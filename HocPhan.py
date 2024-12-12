@@ -1,170 +1,153 @@
+import json
 import time
 import random
-import os
-
-
-
-import csv
 import aiohttp
 import asyncio
-import json
-async def send_to_google_form(id, mail, resu):
+import logging
+
+
+async def chuyennhomdhsp(id_to_hoc, mail, auth):
+    url = "https://dkhpapi.hcmue.edu.vn/api/Regist/RegistScheduleStudyUnit?TurnID=27&Action=CHANGE&StudyProgramID=K487140202&RegistType=KH"
+    payload = '[{"CurriculumID":"' + id_to_hoc + '","ScheduleStudyUnitAlias":"PRIM170601","CurriculumName":"Phát triển chương trình Tiểu học","StudyUnitID":"2421PRIM1706","TypeName":"Lý thuyết","Credits":0,"StudentQuotas":"10-50","StudyUnitTypeID":1,"MaxStudentNumber":null,"NumberOfStudents":48,"Schedules":" Thứ Hai, Tiết(7 - 10), A.413, ADV<br/> (10/02/2025 -> 12/05/2025)<br/> , Thứ Hai, Tiết(7 - 10), Online, ADV<br/> (10/02/2025 -> 12/05/2025)<br/> , Thứ Hai, Tiết(7 - 8), A.413, ADV<br/> (10/02/2025 -> 12/05/2025)<br/> ","ProfessorName":" Hồ Ngọc Khải","IsRegisted":false,"ListOfClassStudentID":"48.01.GDTH.A","NumberOfChilds":0,"FeeDebt":"","ParentID":"","UpdateDate":"12/05/2024 11:12:32","NumberRegistOfEmpty":"3","IsHocTrucTuyen":null,"isOpen":true,"isOpenChilrentTask":false}]'
+    payload = json.loads(payload)
+    headers = {
+        "Accept": "application/json, text/plain, */*",
+        "Authorization": auth,
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Origin": "https://dkhpapi.hcmue.edu.vn",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, như Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+        "content-length": "802"
+    }
+    async with aiohttp.ClientSession() as session:
+        for attempt in range(3):
+            try:
+                async with session.post(url, headers=headers, json=payload) as response:
+                    if response.status == 200:
+                        response_data = await response.json()
+                        print(response)
+                        data = response_data.get("message", {})
+                        print(data)
+                    else:
+                        print(f"Lỗi http {mail}: {response.status}")
+                        print(response)
+            except Exception as e:
+                print(f"Lỗi xảy ra -n{mail}: {e}")
+            await asyncio.sleep(2)
+
+async def send_to_google_form(id, mail, resu,trung=False):
     form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdy1I_tbmyzY_rVJad_ijNwqegeuWCN4BgIVyT0UvtlGzFmGw/formResponse"
     form_payload = {
         'entry.61085827': f"'{str(id)}",
         'entry.1986856884': f'{mail}',
-        'entry.1653873326': f'{resu}',
+        'entry.1653873326': f'{resu[:19]}',
         'entry.1676601180': '4'
     }
+    if trung:
+        form_url = "https://docs.google.com/forms/d/e/1FAIpQLSeAdQzISjnwVYOa9owK2EbjjD7Jwilaj-O2P10YanjI7xLfrQ/formResponse"
+        form_payload = {
+            'entry.1535809202': f"'{str(id)}",
+            'entry.2125679044': f'{mail}',
+            'entry.196628364': f'{resu[4:33]}',
+            'entry.653882450': '4'
+        }
 
     async with aiohttp.ClientSession() as session:
         try:
             async with session.post(form_url, data=form_payload) as form_response:
                 if form_response.status == 200:
-                    print("Đã gửi thành công đến Google Forms.")
+                    if trung:
+                        print(f"User: {mail} bị trùng lịch {resu[4:33]}!")
+                    else:
+                        print(f"User: {mail} đăng ký thành công {id} lúc {resu[:19]}!")
                 else:
                     print(f"Lỗi khi gửi yêu cầu đến Google Forms: {form_response.status}")
         except Exception as e:
             print(f"Lỗi khi gửi yêu cầu đến Google Forms: {e}")
 
-def my_btoa(s):
-    # Bước 1: Chuyển chuỗi thành mảng byte
-    bytes_data = [ord(c) for c in s]
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-    # Bước 2: Mã hóa Base64
+def my_btoa(s):
+    bytes_data = [ord(c) for c in s]
     chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
     base64_result = ''
-
-    # Mã hóa base64 theo từng bộ 3 byte
     for i in range(0, len(bytes_data), 3):
         byte1 = bytes_data[i]
         byte2 = bytes_data[i + 1] if i + 1 < len(bytes_data) else 0
         byte3 = bytes_data[i + 2] if i + 2 < len(bytes_data) else 0
-
         base64_result += chars[byte1 >> 2]
         base64_result += chars[((byte1 & 3) << 4) | (byte2 >> 4)]
         base64_result += chars[((byte2 & 15) << 2) | (byte3 >> 6)]
         base64_result += chars[byte3 & 63]
-
-    # Bước 3: Thêm dấu "=" nếu cần thiết (nếu độ dài không chia hết cho 3)
     if len(bytes_data) % 3 == 1:
         base64_result = base64_result[:-2] + '=='
     elif len(bytes_data) % 3 == 2:
         base64_result = base64_result[:-1] + '='
-
     return base64_result
 
 def rnd(num):
     return random.randint(1, num)
 
-def sc():
-    return [
-               58, 43, 197, 133, 4, 165, 110, 3, 44, 202, 186, 28, 118, 177, 32, 94,
-               219, 6, 199, 27, 101, 191, 66, 115, 234, 120, 10, 236, 104, 108, 74, 247,
-               68, 198, 62, 203, 17, 102, 185, 42
-           ][-36:][:32]  # Cắt mảng như JS
-
-# Hàm mã hóa tương tự JS (ec function)
 def ec(str, key):
-    # Chuyển đổi hàm `rk` và `sc` theo Python
     def rk(key):
         P = [4, 165, 110, 3, 44, 202, 186, 28, 118, 177, 32, 94, 219, 6, 199, 27, 101, 191, 66, 115, 234, 120, 10, 236, 104, 108, 74, 247, 68, 198, 62, 203]
         Q = key % 3 + 1
         return [P[(key + T * Q) % len(P)] for T in range(10)]
-
-    # Phần chính của hàm ec
     Q = rk(key)[::-1]
-    #print("K")
-    #print(sc())
     R = [ord(c) for c in str]
     T = []
     while len(T) < len(R):
         T.extend(Q)
     return [U ^ T[V] for V, U in enumerate(R)]
 
-# Hàm chính `gc` giống JS
 def gc(P, k):
-    # Cắt P nếu dài hơn 22 ký tự
     if len(P) > 22:
         P = P[:22]
-
-    P = P.upper()  # Chuyển P thành chữ hoa giống JS
-    #print(P)
-    # Tính toán giá trị Q như trong JS
+    P = P.upper()
     offset = k
-    current_time_millis = int(time.time() * 1000)  # Đảm bảo tính theo mili giây
-    #print(current_time_millis)
+    current_time_millis = int(time.time() * 1000)
     Q = str(rnd(89) + 10) + str(current_time_millis - offset) + str(rnd(89) + 10) + P
-    #print(Q)
     R = rnd(31)
-    #print(R)
-
-    # Tạo mảng T như trong JS
     T = [R + 32] + ec(Q, R)
-    #print(T)
     T = ''.join([chr(U) for U in T])
-    #print(T)
-
-    # Mã hóa Base64
     return my_btoa(T.encode('utf-8').decode("utf-8"))
 
-# Các hàm phụ trợ (my_btoa, rnd, sc, ec, gc) giữ nguyên.
-# Dưới đây là phần chính liên quan đến `HocPhan` và xử lý bất đồng bộ.
-
 class HocPhan:
-    def __init__(self, id_to_hoc, email, auth):
+    def __init__(self, id_to_hoc, email, auth, n=False):
         self.id_to_hoc = id_to_hoc
         self.email = email
+        self.n = n
         self.auth = auth
         self.is_thanh_cong = False
         self.result = ""
 
     def thongbao(self):
-        if self.is_thanh_cong:
-            if "Trùng TKB MH" not in self.result:
-                print(f" ================================>>{self.id_to_hoc} + {self.result} + {self.email}")
-        """else:
-            print(f" {self.id_to_hoc} + {self.result} + {self.email}")"""
-
-
-
-    def set_result(self, result):
-        self.is_thanh_cong = True
-        self.result = result
+        if self.is_thanh_cong and "Trùng TKB MH" not in self.result:
+            logging.info(f"Thành công: {self.id_to_hoc} - {self.result} - {self.email}")
+        else:
+            logging.warning(f"Không thành công: {self.id_to_hoc} - {self.result} - {self.email}")
+            pass
 
     async def xulydkmhsinhvien(self, session):
         if self.is_thanh_cong:
             return
+        if self.n:
+
+            return
         url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-xulydkmhsinhvien"
         payload = {
             "filter": {
-                "id_to_hoc": f"{self.id_to_hoc}",
+                "id_to_hoc": "-"+self.id_to_hoc,
                 "is_checked": True,
                 "sv_nganh": 1
             }
         }
-
-
         headers = {
             "Accept": "application/json, text/plain, */*",
-            "Accept-Encoding": "gzip, deflate, br, zstd",
-            "Accept-Language": "vi,en-US;q=0.9,en;q=0.8,en-GB;q=0.7",
-            "Connection": "keep-alive",
             "Authorization": self.auth,
             "Content-Type": "application/json",
-            "Idpc": "-7648466455965434478",
-            "Origin": "https://thongtindaotao.sgu.edu.vn",
-            "Referer": "https://thongtindaotao.sgu.edu.vn/",
-            "host": "thongtindaotao.sgu.edu.vn",
-            "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-platform": '"Windows"',
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-origin",
-            "ua": f"{gc('dkmh/w-xulydkmhsinhvien', -9000)}"
+            "ua": f"{gc('dkmh/w-xulydkmhsinhvien', -2132)}"
         }
-
-        while not self.is_thanh_cong:
+        for attempt in range(3):
             try:
                 async with session.post(url, headers=headers, json=payload) as response:
                     if response.status == 200:
@@ -173,41 +156,65 @@ class HocPhan:
                         if data.get("is_thanh_cong"):
                             self.is_thanh_cong = True
                             self.result = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
-                            self.thongbao()
-                            await send_to_google_form(self.id_to_hoc,self.email,self.result)
+                            await send_to_google_form(self.id_to_hoc, self.email, self.result)
+                            return
                         else:
-                            self.result = data.get('thong_bao_loi')
+                            self.result = data.get('thong_bao_loi', "Lỗi không xác định")
                             if "Trùng TKB MH" in self.result:
                                 print(f" {self.id_to_hoc} + {self.result} + {self.email}")
                                 self.is_thanh_cong = True
-                                await send_to_google_form(self.id_to_hoc, self.email, self.result)
-
-                            self.thongbao()
+                                await send_to_google_form(self.id_to_hoc, self.email, self.result, True)
                     else:
                         self.result = f"Lỗi HTTP: {response.status}"
-                        print(self.result + self.email)
             except Exception as e:
                 self.result = f"Lỗi xảy ra: {e}"
-                print(self.result + self.email)
+            await asyncio.sleep(2)
+        self.thongbao()
+
+
 
 async def main():
-    hoc_phans = []
+    processed_ids = set()  # Lưu các `id_to_hoc` đã xử lý thành công
+    while True:
 
-    # Đọc dữ liệu từ file CSV
-    with open('data.csv', mode='r', encoding='utf-8-sig') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            hoc_phans.append(HocPhan(id_to_hoc=row['ID_HP'], email=row['EMAIL'], auth=row['auth']))
+        hoc_phans = [HocPhan("2421PRIM170602","BE NGUYEN","bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjQ4LjAxLjkwMS4xNTUiLCJOYW1lIjoiVHLhuqduIE5n4buNYyBUaOG6o28gTmd1ecOqbiIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6Iks0ODcxNDAyMDIiLCJuYmYiOjE3MzM5NjYzNTEsImV4cCI6MTczMzk3MzU1MSwiaWF0IjoxNzMzOTY2MzUxLCJpc3MiOiJQU0NVSVNBcGkiLCJhdWQiOiJoY211ZSJ9.XD-rhPxyzuoR0duShvYaV7sW2Nd1BRASef6FkdZ9CbY",True)]
+        with open("data", mode="r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                data = line.split('|')
+                if len(data) < 3:
+                    logging.error(f"Dòng không hợp lệ (bỏ qua): {line}")
+                    continue
+                # Nếu id_to_hoc đã được xử lý, bỏ qua
+                if data[0] in processed_ids:
+                    continue
+                hoc_phans.append(HocPhan(data[0], data[1], data[2]))
 
-    timeout = aiohttp.ClientTimeout(total=30)
-    async with aiohttp.ClientSession(timeout=timeout) as session:
-        tasks = [hp.xulydkmhsinhvien(session) for hp in hoc_phans]
-        await asyncio.gather(*tasks)
+        if not hoc_phans:
+            logging.info("Không còn phần tử để xử lý.")
+            await asyncio.sleep(5)  # Chờ 10 giây trước khi kiểm tra lại
+            continue
 
-    for hp in hoc_phans:
-        hp.thongbao()
+        timeout = aiohttp.ClientTimeout(total=300)
+        semaphore = asyncio.Semaphore(50)
+
+        async def with_semaphore(coro):
+            async with semaphore:
+                return await coro
+
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            tasks = [with_semaphore(hp.xulydkmhsinhvien(session)) for hp in hoc_phans]
+            await asyncio.gather(*tasks)
+
+        # Cập nhật danh sách đã xử lý thành công
+        for hp in hoc_phans:
+            if hp.is_thanh_cong:
+                processed_ids.add(hp.id_to_hoc)
+
+        logging.info("Chờ 10 giây trước khi thực hiện lần tiếp theo...")
+        await asyncio.sleep(0.5)  # Chờ 10 giây trước khi chạy lại
 
 if __name__ == "__main__":
     asyncio.run(main())
-# Hàm gửi dữ liệu đến Google Forms
-
