@@ -1,6 +1,8 @@
 import json
 import time
 import random
+from datetime import datetime, timedelta
+
 import aiohttp
 import asyncio
 import logging
@@ -112,11 +114,13 @@ def gc(P, k):
     return my_btoa(T.encode('utf-8').decode("utf-8"))
 
 class HocPhan:
-    def __init__(self, id_to_hoc, email, auth, n=False):
+    def __init__(self, id_to_hoc, email, auth, username = None, password = None):
         self.id_to_hoc = id_to_hoc
         self.email = email
-        self.n = n
         self.auth = auth
+        self.username = username
+        self.password = password
+        self.ex = datetime.now() + timedelta(hours=1.5)
         self.is_thanh_cong = False
         self.result = ""
 
@@ -129,9 +133,6 @@ class HocPhan:
 
     async def xulydkmhsinhvien(self, session):
         if self.is_thanh_cong:
-            return
-        if self.n:
-
             return
         url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-xulydkmhsinhvien"
         payload = {
@@ -164,6 +165,8 @@ class HocPhan:
                                 print(f" {self.id_to_hoc} + {self.result} + {self.email}")
                                 self.is_thanh_cong = True
                                 await send_to_google_form(self.id_to_hoc, self.email, self.result, True)
+                    elif response.status == 401:
+                        print(f"{self.username} het han auth!")
                     else:
                         self.result = f"Lỗi HTTP: {response.status}"
             except Exception as e:
@@ -171,13 +174,97 @@ class HocPhan:
             await asyncio.sleep(2)
         self.thongbao()
 
+    async def login(self, session):
+        if self.is_thanh_cong:
+            return
+        url = "https://thongtindaotao.sgu.edu.vn/api/auth/login"
+        payload = {
+            "username": self.username,
+            "password": self.password,
+            "grant_type": "password"
+        }
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "ua": f"{gc('auth/login', -2132)}"
+        }
+        for attempt in range(3):
+            try:
+                async with session.post(url, headers=headers, data=payload) as response:
+                    if response.status == 200:
+                        response_data = await response.json()
+                        self.auth = "bearer " + response_data["access_token"]
+                        self.ex = datetime.now() + timedelta(hours=1.5)
+                        print(f"{self.username}: Login Successful!")
+                    else:
+                        self.result = f"Lỗi HTTP login: {response.status}"
+            except Exception as e:
+                self.result = f"Lỗi xảy ra: {e}"
+            await asyncio.sleep(2)
+        self.thongbao()
+
+    async def RegistSchedule(self, session):
+        if self.is_thanh_cong:
+            return
+        url = "https://dkhpapi.hcmue.edu.vn/api/Regist/RegistScheduleStudyUnit?TurnID=51&Action=REGIST&StudyProgramID=K507420203&RegistType=KH"
+        #url = "https://dkhpapi.hcmue.edu.vn/api/Regist/GetAllScheduleUnitAllowRegist"
+        payload = [
+            {
+                "CurriculumID": self.id_to_hoc,
+                "ScheduleStudyUnitAlias":self.id_to_hoc[4:],
+                "CurriculumName":"Phương pháp học tập hiệu quả",
+                "StudyUnitID":self.id_to_hoc[:12],
+                "TypeName":"Lý thuyết",
+                "Credits":0,
+                "StudentQuotas":"15-50",
+                "StudyUnitTypeID":1,
+                "MaxStudentNumber": None,
+                "NumberOfStudents":49,
+                "Schedules":" Thứ Tư, Tiết(1 - 3), B.109, ADV<br/> (12/02/2025 -> 16/04/2025)<br/> , Thứ Tư, Tiết(1 - 3), Online, ADV<br/> (12/02/2025 -> 16/04/2025)<br/> ",
+                "ProfessorName":" Đặng Ánh Hồng",
+                "IsRegisted":False,
+                "ListOfClassStudentID":"",
+                "NumberOfChilds":0,
+                "FeeDebt":"","ParentID":"",
+                "UpdateDate":"12/20/2024 08:47:38",
+                "NumberRegistOfEmpty":"1",
+                "IsHocTrucTuyen":None,
+                "isOpen": True,
+                "isOpenChilrentTask":False
+            }
+        ]
+        #payload = {"ReqParam1":"K507420203","ReqParam2":"KH","ReqParam3":"2421EDUC2801"}
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Authorization": self.auth,
+            "Content-Type": "application/json",
+            "Origin" : "https://dkhp.hcmue.edu.vn",
+            "user-agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+        }
+        for attempt in range(3):
+            try:
+                async with session.post(url, headers=headers, json=payload) as response:
+                    if response.status == 200:
+                        response_data = await response.json()
+                        print(response_data)
+                        print(response)
+                    elif response.status == 400:
+                        response_data = await response.json()
+                        print(response_data.get("message"," Khong co tin nhan"))
+                    else:
+                        print(f"Lỗi HTTP: {response.status}")
+            except Exception as e:
+                print(f"Lỗi xảy ra: {e}")
+            await asyncio.sleep(2)
+
+
 
 
 async def main():
     processed_ids = set()  # Lưu các `id_to_hoc` đã xử lý thành công
     while True:
-
-        hoc_phans = [HocPhan("2421PRIM170602","BE NGUYEN","bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjQ4LjAxLjkwMS4xNTUiLCJOYW1lIjoiVHLhuqduIE5n4buNYyBUaOG6o28gTmd1ecOqbiIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6Iks0ODcxNDAyMDIiLCJuYmYiOjE3MzM5NjYzNTEsImV4cCI6MTczMzk3MzU1MSwiaWF0IjoxNzMzOTY2MzUxLCJpc3MiOiJQU0NVSVNBcGkiLCJhdWQiOiJoY211ZSJ9.XD-rhPxyzuoR0duShvYaV7sW2Nd1BRASef6FkdZ9CbY",True)]
+        hoc_phans = []
+        #hoc_phans = [HocPhan("2421PRIM170602","BE NGUYEN","bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjQ4LjAxLjkwMS4xNTUiLCJOYW1lIjoiVHLhuqduIE5n4buNYyBUaOG6o28gTmd1ecOqbiIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6Iks0ODcxNDAyMDIiLCJuYmYiOjE3MzM5NjYzNTEsImV4cCI6MTczMzk3MzU1MSwiaWF0IjoxNzMzOTY2MzUxLCJpc3MiOiJQU0NVSVNBcGkiLCJhdWQiOiJoY211ZSJ9.XD-rhPxyzuoR0duShvYaV7sW2Nd1BRASef6FkdZ9CbY",True)]
         with open("data", mode="r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
@@ -190,7 +277,7 @@ async def main():
                 # Nếu id_to_hoc đã được xử lý, bỏ qua
                 if data[0] in processed_ids:
                     continue
-                hoc_phans.append(HocPhan(data[0], data[1], data[2]))
+                hoc_phans.append(HocPhan(data[0], data[1], data[2], data[3], data[4]))
 
         if not hoc_phans:
             logging.info("Không còn phần tử để xử lý.")
@@ -198,7 +285,7 @@ async def main():
             continue
 
         timeout = aiohttp.ClientTimeout(total=300)
-        semaphore = asyncio.Semaphore(50)
+        semaphore = asyncio.Semaphore(3)
 
         async def with_semaphore(coro):
             async with semaphore:
@@ -206,6 +293,7 @@ async def main():
 
         async with aiohttp.ClientSession(timeout=timeout) as session:
             tasks = [with_semaphore(hp.xulydkmhsinhvien(session)) for hp in hoc_phans]
+            #tasks = [with_semaphore(hp.RegistSchedule(session)) for hp in hoc_phans]
             await asyncio.gather(*tasks)
 
         # Cập nhật danh sách đã xử lý thành công

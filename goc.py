@@ -3,18 +3,8 @@ import re
 import random
 import time
 import base64
-import concurrent.futures
-import csv
-import jwt
-import asyncio
-import aiohttp
-import json
-import logging
-from tabulate import tabulate
-from prettytable import PrettyTable
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
 
 def open_array(filename):
   try:
@@ -116,21 +106,13 @@ def gc(P, k):
 
 
 class User:
-
-
-    def __init__(self, email, username, password, auth, ex, id_mon):
-        self.email = email
+    def __init__(self, username, password, ds_mon = []):
         self.username = username
         self.password = password
-        self.auth = auth
-        self.ex = ex
-        self.ds_nhom_to = id_mon
-        self.idpc = "-7648466455965434478"
+        self.ds_mon = ds_mon
         self.ketqua = []
         self.auth = None
-        self.ex = None
         self.offset = -2132
-
 
     def login(self):
         url = "https://thongtindaotao.sgu.edu.vn/api/auth/login"
@@ -151,16 +133,109 @@ class User:
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
             "ua": f"{gc("auth/login", self.offset)}",
-        }
+      }
 
         response = requests.post(url, headers=headers, data=payload)
         if response.status_code == 200:
             response = response.json()
             self.auth = "bearer " + response["access_token"]
-            self.ex = datetime.now() + 2
             self.refresh_token = response["refresh_token"]
             self.idpc = response["idpc"]
             self.name = response["name"]
+            return True
+        return False
+
+    def lockqsv(self):
+        url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/sms/w-locketquaduyetsinhvien"
+        payload = '{"ma_sv":"' + self.username + '"}'
+        # Headers
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "Accept-Language": "vi,en-US;q=0.9,en;q=0.8,en-GB;q=0.7",
+            "Authorization" : self.auth,
+            "Content-length": "22",
+            "Content-Type": "application/json",
+            "Idpc": f"{self.idpc}",
+            "Origin": "https://thongtindaotao.sgu.edu.vn",
+            "Referer": "https://thongtindaotao.sgu.edu.vn/",
+            "sec-ch-ua": '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"Windows"',
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "ua": f"{gc("sms/w-locketquaduyetsinhvien", self.offset)}",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+        }
+
+        response = requests.post(url, headers=headers, data=payload)
+        if response.status_code == 200:
+            response = response.json()
+            self.code = response["code"]
+            return response["code"]
+        return None
+
+    def locdkloc(self):
+        url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-locdsdieukienloc"
+        payload = ''
+        # Headers
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "Accept-Language": "vi,en-US;q=0.9,en;q=0.8,en-GB;q=0.7",
+            "Authorization": self.auth,
+            "Content-length": "0",
+            "Content-Type": "text/plain",
+            "Idpc": f"{self.idpc}",
+            "Origin": "https://thongtindaotao.sgu.edu.vn",
+            "Referer": "https://thongtindaotao.sgu.edu.vn/",
+            "sec-ch-ua": '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"Windows"',
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "ua": f"{gc("dkmh/w-locdsdieukienloc", self.offset)}",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+        }
+
+        response = requests.post(url, headers=headers, data=payload)
+        if response.status_code == 200:
+            self.locmon = response.json()
+            return True
+        return False
+
+    def locdsnhomto(self):
+        url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-locdsnhomto"
+        payload = '{"is_CVHT":false,"additional":{"paging":{"limit":99999,"page":1},"ordering":[{"name":"","order_type":""}]}}'
+        # Headers
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "Accept-Language": "vi,en-US;q=0.9,en;q=0.8,en-GB;q=0.7",
+            "Authorization": self.auth,
+            "Content-length": "107",
+            "Content-Type": "application/json",
+            "Idpc": f"{self.idpc}",
+            "Origin": "https://thongtindaotao.sgu.edu.vn",
+            "Referer": "https://thongtindaotao.sgu.edu.vn/",
+            "sec-ch-ua": '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"Windows"',
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "ua": f"{gc("dkmh/w-locdsnhomto", self.offset)}",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+        }
+
+        response = requests.post(url, headers=headers, data=payload)
+        if response.status_code == 200:
+            response = response.json()
+            self.dsnhomto = response["data"]['ds_nhom_to']
+            self.ds_mon = response["data"]['ds_mon_hoc']
+            self.dskhoa = response["data"]['ds_khoa']
             return True
         return False
 
@@ -196,35 +271,11 @@ class User:
         try:
             response = requests.post(url, headers=headers, data=json.dumps(payload))
             if response.status_code == 200:
-                print(response.json())
                 response_data = response.json()
                 data = response_data.get("data", {})
                 if data.get("is_thanh_cong"):
-                    re = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
-                    print(f"Mail: {self.email} + {id_mon} + {re}")
                     """{'data': {'is_thanh_cong': False, 'thong_bao_loi': 'Cảnh báo: tài khoản của bạn không được đăng ký/hủy đăng ký ở thời điểm hiện tại.', 'is_chung_nhom_mon_hoc': False, 'is_show_nganh_hoc': False, 'ket_qua_dang_ky': {'id_kqdk': '0', 'ngay_dang_ky': '0001-01-01T00:00:00', 'is_da_rut_mon_hoc': False, 'enable_xoa': False, 'hoc_phi_tam_tinh': 0.0, 'id_dia_diem_thi': '0'}}, 'result': True, 'code': 200}
                                     """
-                    return data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
-                else:
-                    return data.get('thong_bao_loi')
-
-            else:
-                print(response.status_code)
-                return False
-        except Exception as e:
-            print(f"Lỗi xảy ra: {e}")
-        return False
-
-        """{'data': {'is_thanh_cong': False, 'thong_bao_loi': 'Cảnh báo: tài khoản của bạn không được đăng ký/hủy đăng ký ở thời điểm hiện tại.', 'is_chung_nhom_mon_hoc': False, 'is_show_nganh_hoc': False, 'ket_qua_dang_ky': {'id_kqdk': '0', 'ngay_dang_ky': '0001-01-01T00:00:00', 'is_da_rut_mon_hoc': False, 'enable_xoa': False, 'hoc_phi_tam_tinh': 0.0, 'id_dia_diem_thi': '0'}}, 'result': True, 'code': 200}
-
-        try:
-            response = requests.post(url, headers=headers, data=json.dumps(payload))
-            if response.status_code == 200:
-                response_data = response.json()
-
-                print(response_data)
-                data = response_data.get("data", {})
-                if data.get("is_thanh_cong"):
                     return data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
                 else:
                     return False
@@ -234,8 +285,37 @@ class User:
                 return False
         except Exception as e:
             print(f"Lỗi xảy ra: {e}")
-        return False"""
+        return False
 
+    def getdsmon(self):
+        if self.auth is not None:
+            if self.lockqsv():
+                if self.locdkloc():
+                    if self.locdsnhomto():
+                        return self.dsnhomto
+                    else:
+                        print("Lỗi lấy ds môn!")
+                else:
+                    print("Lỗi lấy dk lọc!")
+            else:
+                print("Lỗi duyệt sinh viên!")
+        else:
+            print("Lỗi token trống!")
+        return None
+
+    def timmon(self):
+        if self.dsnhomto is not None:
+            for i in self.dsnhomto:
+                if i['id_to_hoc'] == "-8187864983186726526":
+                    return i['sl_cl']
+
+    def dk(self):
+        for i in self.ds_mon:
+            if i['is_thanh_cong'] == False:
+                check = self.xulydkmhsinhvien(i['id_mon'])
+                print(check)
+                if check != False:
+                    i['is_thanh_cong'] = check
 
 
 
@@ -249,7 +329,12 @@ df.to_csv("DS_MON9_12.csv", index=False, encoding='utf-8-sig')"""
 dsmon = [
 {'id_mon': '-9059984572162929148', 'is_thanh_cong': False}
 ]
-user1 = User("", "3122410003", "Angia@1306", "", "","")
+user1 = User("3122410003", "Angia@1306")
+"""user2 = User("3122410003", "Angia@1306")
+user2.login()
+user2.locdsnhomto()
+print(user2.auth)
+user2.xulydkmhsinhvien("-5799348462041320401")"""
 while True:
     i = input("Nhap lua chon:")
     if i == "1":
@@ -263,12 +348,13 @@ while True:
             print("SUCCESS")
     elif i == "4":
         if user1.locdsnhomto():
-            save_array(user1.ds_mon,"ds_mon.json")
+            save_array(user1.ds_mon,"ds_mon18_12_24.json")
             df = pd.DataFrame(user1.ds_mon)
             df.to_csv("DS_MON9_12.csv", index=False, encoding='utf-8-sig')
-            save_array(user1.dsnhomto, "ds_nhom_to.json.json")
+
+            save_array(user1.dsnhomto, "ds_nhom_to18_12_24.json")
             df = pd.DataFrame(user1.dsnhomto)
-            df.to_csv("DSNHOMTO9_12.csv", index=False, encoding='utf-8-sig')
+            df.to_csv("DSNHOMTO18_12_24.csv", index=False, encoding='utf-8-sig')
             print("SUCCESS")
     elif i == "5":
         while True:
@@ -276,48 +362,3 @@ while True:
             print(user1.ds_mon)
     elif i == "0":
         break
-
-# Chạy các bước
-"""fileu = "User.csv"
-filem ="ds_nhom_to_user.csv"
-User.doc_file_khach_hang(fileu)
-User.hien_thi_ds_user()
-User.doc_file_nhom_to(filem)
-for user in User.ds_user:
-    print(user.email)
-    print(user.ds_nhom_to)"""
-
-
-def doc_file_khach_hang(filem):
-    df = pd.read_csv(filem)
-    ds_user =[]
-    for index, row in df.iterrows():
-        user = User(
-            row['EMAIL'],
-            row['USERNAME'],
-            row['PASSWORD'],
-            row['AUTH'],
-            row['EX'],
-            row['id_mon']
-        )
-        # Giả sử bạn có cách để phân bổ môn học (ds_nhom_to)
-        user.ds_nhom_to = eval(row['id_mon'])  # Chuyển đổi chuỗi thành list (nếu cần)
-        ds_user.append(user)
-    return ds_user
-"""filem ="User - Copy.csv"
-df = pd.read_csv(filem)
-ds = doc_file_khach_hang(filem)
-for user in ds:
-    user.login()
-    print(user.email)
-    print(user.ds_nhom_to)
-    for mon in user.ds_nhom_to:
-        user.xulydkmhsinhvien(mon)
-"""
-
-
-
-
-
-
-
