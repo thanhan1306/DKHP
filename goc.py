@@ -220,14 +220,14 @@ class User:
             "Idpc": f"{self.idpc}",
             "Origin": "https://thongtindaotao.sgu.edu.vn",
             "Referer": "https://thongtindaotao.sgu.edu.vn/",
-            "sec-ch-ua": '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+            #"sec-ch-ua": '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
             "sec-ch-ua-mobile": "?0",
             "sec-ch-ua-platform": '"Windows"',
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
             "ua": f"{gc("dkmh/w-locdsnhomto", self.offset)}",
-            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+            #"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
         }
 
         response = requests.post(url, headers=headers, data=payload)
@@ -236,6 +236,38 @@ class User:
             self.dsnhomto = response["data"]['ds_nhom_to']
             self.ds_mon = response["data"]['ds_mon_hoc']
             self.dskhoa = response["data"]['ds_khoa']
+            return True
+        return False
+
+    def locdsmonnguyenvong(self):
+        url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-locdsmonnguyenvong"
+        payload = '{"is_CVHT":false,"additional":{"paging":{"limit":500,"page":1},"ordering":[{"name":"","order_type":""}]}}'
+        # Headers
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "Accept-Language": "vi,en-US;q=0.9,en;q=0.8,en-GB;q=0.7",
+            "Authorization": self.auth,
+            "Content-length": "107",
+            "Content-Type": "application/json",
+            "Idpc": f"{self.idpc}",
+            "Origin": "https://thongtindaotao.sgu.edu.vn",
+            "Referer": "https://thongtindaotao.sgu.edu.vn/",
+            #"sec-ch-ua": '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"Windows"',
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "ua": f"{gc("dkmh/w-locdsmonnguyenvong", self.offset)}",
+            #"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+        }
+
+        response = requests.post(url, headers=headers, data=payload)
+        if response.status_code == 200:
+            response = response.json()
+            self.dsnhomto = response["data"]['ds_nhom_to']
+            self.ds_mon = response["data"]['ds_mon_hoc']
             return True
         return False
 
@@ -348,15 +380,25 @@ while True:
             print("SUCCESS")
     elif i == "4":
         if user1.locdsnhomto():
-            save_array(user1.ds_mon,"ds_mon18_12_24.json")
+            save_array(user1.ds_mon,"ds_mon11_4_25.json")
             df = pd.DataFrame(user1.ds_mon)
-            df.to_csv("DS_MON9_12.csv", index=False, encoding='utf-8-sig')
+            df.to_csv("DS_MON11_4_25.csv", index=False, encoding='utf-8-sig')
 
-            save_array(user1.dsnhomto, "ds_nhom_to18_12_24.json")
+            save_array(user1.dsnhomto, "ds_nhom_to11_4_25.json")
             df = pd.DataFrame(user1.dsnhomto)
-            df.to_csv("DSNHOMTO18_12_24.csv", index=False, encoding='utf-8-sig')
+            df.to_csv("DSNHOMTO11_4_25.csv", index=False, encoding='utf-8-sig')
             print("SUCCESS")
     elif i == "5":
+        if user1.locdsmonnguyenvong():
+            save_array(user1.ds_mon,"ds_mon.json")
+            df = pd.DataFrame(user1.ds_mon)
+            df.to_csv("DS_MON.csv", index=False, encoding='utf-8-sig')
+
+            save_array(user1.dsnhomto, "ds_nhom_to11_4_25.json")
+            df = pd.DataFrame(user1.dsnhomto)
+            df.to_csv("DSNHOMTO11_4_25.csv", index=False, encoding='utf-8-sig')
+            print("SUCCESS")
+    elif i == "6":
         while True:
             user1.dk()
             print(user1.ds_mon)

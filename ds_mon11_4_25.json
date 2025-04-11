@@ -1,0 +1,607 @@
+[
+    {
+        "ma": "865002",
+        "ten": "C\u01a1 s\u1edf v\u0103n h\u00f3a Vi\u1ec7t Nam",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "864007",
+        "ten": "\u0110\u1ea1i s\u1ed1 tuy\u1ebfn t\u00ednh",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "810509",
+        "ten": "Ph\u01b0\u01a1ng ph\u00e1p nghi\u00ean c\u1ee9u khoa h\u1ecdc l\u1ecbch s\u1eed"
+    },
+    {
+        "ma": "817407",
+        "ten": "H\u00ecnh h\u1ecda 2"
+    },
+    {
+        "ma": "867508",
+        "ten": "To\u00e1n cao c\u1ea5p C2"
+    },
+    {
+        "ma": "801416",
+        "ten": "Ph\u01b0\u01a1ng ph\u00e1p d\u1ea1y h\u1ecdc m\u00f4n To\u00e1n II"
+    },
+    {
+        "ma": "820505",
+        "ten": "Gi\u00e1o d\u1ee5c ph\u00e1p lu\u1eadt"
+    },
+    {
+        "ma": "867511",
+        "ten": "Kinh t\u1ebf l\u01b0\u1ee3ng"
+    },
+    {
+        "ma": "834307",
+        "ten": "K\u1ef9 thu\u1eadt ph\u00e2n t\u00edch m\u00f4i tr\u01b0\u1eddng"
+    },
+    {
+        "ma": "850022",
+        "ten": "Th\u00ed nghi\u1ec7m \u0111i\u1ec7n t\u1eed 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "839409",
+        "ten": "T\u1ef1 \u0111\u1ed9ng h\u00f3a th\u01b0 vi\u1ec7n"
+    },
+    {
+        "ma": "861303",
+        "ten": "Ch\u1ee7 ngh\u0129a x\u00e3 h\u1ed9i khoa h\u1ecdc"
+    },
+    {
+        "ma": "816419",
+        "ten": "Nh\u1ea1c c\u1ee5 2"
+    },
+    {
+        "ma": "865508",
+        "ten": "Th\u1ed1ng k\u00ea trong Khoa h\u1ecdc x\u00e3 h\u1ed9i"
+    },
+    {
+        "ma": "820346",
+        "ten": "T\u01b0 t\u01b0\u1edfng H\u1ed3 Ch\u00ed Minh (GDCT)"
+    },
+    {
+        "ma": "811409",
+        "ten": "Th\u1ef1c t\u1ebf chuy\u00ean m\u00f4n 1"
+    },
+    {
+        "ma": "861302",
+        "ten": "Kinh t\u1ebf ch\u00ednh tr\u1ecb M\u00e1c - L\u00eanin"
+    },
+    {
+        "ma": "819503",
+        "ten": "Th\u1ec3 d\u1ee5c nh\u1ecbp \u0111i\u1ec7u cho tr\u1ebb m\u1ea7m non"
+    },
+    {
+        "ma": "866402",
+        "ten": "Ti\u1ebfng Anh 2"
+    },
+    {
+        "ma": "841070",
+        "ten": "Th\u1ef1c t\u1eadp t\u1ed1t nghi\u1ec7p (DCT)",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "834462",
+        "ten": "Th\u1ef1c t\u1eadp t\u1ed1t nghi\u1ec7p (DKM)"
+    },
+    {
+        "ma": "832060",
+        "ten": "P/t\u00edch b/c\u00e1o t\u00e0i ch\u00ednh doanh nghi\u1ec7p",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "817411",
+        "ten": "Lu\u1eadt xa g\u1ea7n"
+    },
+    {
+        "ma": "817506",
+        "ten": "T\u1ed5 ch\u1ee9c ho\u1ea1t \u0111\u1ed9ng d\u1ea1y h\u1ecdc m\u00f4n m\u1ef9 thu\u1eadt \u1edf tr\u01b0\u1eddng ph\u1ed5 th\u00f4ng 1"
+    },
+    {
+        "ma": "861301",
+        "ten": "Tri\u1ebft h\u1ecdc M\u00e1c - L\u00eanin"
+    },
+    {
+        "ma": "BOCH11",
+        "ten": "B\u00f3ng chuy\u1ec1n 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "862101",
+        "ten": "Gi\u00e1o d\u1ee5c th\u1ec3 ch\u1ea5t (I)",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "835103",
+        "ten": "\u0110\u1ecba l\u00fd du l\u1ecbch Vi\u1ec7t Nam",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "843504",
+        "ten": "K\u1ef9 thu\u1eadt x\u00e2y d\u1ef1ng v\u0103n b\u1ea3n ph\u00e1p lu\u1eadt"
+    },
+    {
+        "ma": "857509",
+        "ten": "Kinh t\u1ebf Du l\u1ecbch"
+    },
+    {
+        "ma": "820507",
+        "ten": "L\u00fd lu\u1eadn v\u00e0 ph\u01b0\u01a1ng ph\u00e1p d\u1ea1y h\u1ecdc b\u1ed9 m\u00f4n 2"
+    },
+    {
+        "ma": "867001",
+        "ten": "Nguy\u00ean l\u00fd th\u1ed1ng k\u00ea kinh t\u1ebf",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "849498",
+        "ten": "Th\u1ef1c t\u1eadp t\u1ed1t nghi\u1ec7p (DDE)"
+    },
+    {
+        "ma": "863412",
+        "ten": "Qu\u1ea3n l\u00fd HCNN & qu\u1ea3n l\u00fd ng\u00e0nh GD-\u0110T (tr\u01b0\u1eddng trung h\u1ecdc)"
+    },
+    {
+        "ma": "BORO11",
+        "ten": "B\u00f3ng r\u1ed5 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "809308",
+        "ten": "H\u1ec7 th\u1ed1ng th\u1ec3 lo\u1ea1i v\u00e0 t\u00e1c gi\u1ea3 ti\u00eau bi\u1ec3u V\u0103n h\u1ecdc Vi\u1ec7t Nam hi\u1ec7n \u0111\u1ea1i 1900 - 1945"
+    },
+    {
+        "ma": "832026",
+        "ten": "Thu\u1ebf",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "CALO11",
+        "ten": "C\u1ea7u l\u00f4ng 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "821404",
+        "ten": "C\u01a1 s\u1edf v\u1eadt l\u00fd 1"
+    },
+    {
+        "ma": "865007",
+        "ten": "\u0110\u1ea1i c\u01b0\u01a1ng x\u00e3 h\u1ed9i h\u1ecdc",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "841312",
+        "ten": "Ti\u1ebfng Anh B1 - 2"
+    },
+    {
+        "ma": "866401",
+        "ten": "Ti\u1ebfng Anh 1"
+    },
+    {
+        "ma": "822314",
+        "ten": "\u0110\u1ecba l\u00ed t\u1ef1 nhi\u00ean Vi\u1ec7t Nam"
+    },
+    {
+        "ma": "820482",
+        "ten": "Gi\u00e1o d\u1ee5c kinh t\u1ebf 2"
+    },
+    {
+        "ma": "CALO12",
+        "ten": "C\u1ea7u l\u00f4ng 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "846302",
+        "ten": "H\u1ec7 th\u1ed1ng gi\u00e1o d\u1ee5c qu\u1ed1c d\u00e2n v\u00e0 b\u1ed9 m\u00e1y QLGD"
+    },
+    {
+        "ma": "838504",
+        "ten": "Th\u01b0\u1eddng th\u1ee9c m\u1ef9 thu\u1eadt"
+    },
+    {
+        "ma": "803107",
+        "ten": "Th\u1ef1c h\u00e0nh h\u00f3a ph\u00e2n t\u00edch \u0111\u1ecbnh t\u00ednh",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "850029",
+        "ten": "Th\u1ef1c h\u00e0nh \u0111i\u1ec7n - \u0111i\u1ec7n t\u1eed",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "867510",
+        "ten": "X\u00e1c su\u1ea5t v\u00e0 nguy\u00ean l\u00fd th\u1ed1ng k\u00ea kinh t\u1ebf"
+    },
+    {
+        "ma": "865006",
+        "ten": "Ph\u00e1p lu\u1eadt \u0111\u1ea1i c\u01b0\u01a1ng",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "816426",
+        "ten": "Thanh nha\u0323c 2"
+    },
+    {
+        "ma": "802502",
+        "ten": "Ph\u00e1t tri\u1ec3n ch\u01b0\u01a1ng tr\u00ecnh v\u1eadt l\u00fd THPT"
+    },
+    {
+        "ma": "819504",
+        "ten": "L\u00fd lu\u1eadn d\u1ea1y h\u1ecdc m\u1ea7m non hi\u1ec7n \u0111\u1ea1i"
+    },
+    {
+        "ma": "866102",
+        "ten": "Ti\u1ebfng Anh II",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "862407",
+        "ten": "Gi\u00e1o d\u1ee5c qu\u1ed1c ph\u00f2ng v\u00e0 an ninh II"
+    },
+    {
+        "ma": "857510",
+        "ten": "H\u1ec7 th\u1ed1ng di t\u00edch l\u1ecbch s\u1eed - v\u0103n h\u00f3a v\u00e0 danh th\u1eafng Vi\u1ec7t Nam"
+    },
+    {
+        "ma": "BOCH12",
+        "ten": "B\u00f3ng chuy\u1ec1n 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "832107",
+        "ten": "L\u00fd thuy\u1ebft t\u00e0i ch\u00ednh ti\u1ec1n t\u1ec7",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "866103",
+        "ten": "Ti\u1ebfng Anh III",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "BORO12",
+        "ten": "B\u00f3ng r\u1ed5 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "867007",
+        "ten": "To\u00e1n cao c\u1ea5p C1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "853009",
+        "ten": "T\u00e2m l\u00ed h\u1ecdc nh\u00e2n c\u00e1ch",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "854502",
+        "ten": "K\u1ef9 n\u0103ng n\u00f3i tr\u01b0\u1edbc c\u00f4ng ch\u00fang"
+    },
+    {
+        "ma": "852498",
+        "ten": "Th\u1ef1c t\u1eadp t\u1ed1t nghi\u1ec7p (DDV) (DCV)"
+    },
+    {
+        "ma": "866403",
+        "ten": "Ti\u1ebfng Anh 3"
+    },
+    {
+        "ma": "839307",
+        "ten": "Xu\u1ea5t b\u1ea3n \u0111i\u1ec7n t\u1eed"
+    },
+    {
+        "ma": "843406",
+        "ten": "Lu\u1eadt D\u00e2n s\u1ef1 2 - T\u00e0i s\u1ea3n, s\u1edf h\u1eefu v\u00e0 th\u1eeba k\u1ebf t\u00e0i s\u1ea3n"
+    },
+    {
+        "ma": "801506",
+        "ten": "R\u00e8n luy\u1ec7n nghi\u1ec7p v\u1ee5 s\u01b0 ph\u1ea1m th\u01b0\u1eddng xuy\u00ean"
+    },
+    {
+        "ma": "801351",
+        "ten": "Ph\u01b0\u01a1ng ph\u00e1p nghi\u00ean c\u1ee9u khoa h\u1ecdc trong ng\u00e0nh To\u00e1n"
+    },
+    {
+        "ma": "BOBA11",
+        "ten": "B\u00f3ng b\u00e0n 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "802503",
+        "ten": "Th\u1ef1c h\u00e0nh s\u01b0 ph\u1ea1m THPT 1"
+    },
+    {
+        "ma": "867002",
+        "ten": "Nguy\u00ean l\u00fd k\u1ebf to\u00e1n",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "813410",
+        "ten": "\u0110\u1ecdc - Vi\u1ebft 3"
+    },
+    {
+        "ma": "862409",
+        "ten": "Gi\u00e1o d\u1ee5c qu\u1ed1c ph\u00f2ng v\u00e0 an ninh IV"
+    },
+    {
+        "ma": "864001",
+        "ten": "X\u00e1c su\u1ea5t th\u1ed1ng k\u00ea A",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "821502",
+        "ten": "Sinh h\u1ecdc \u0111\u1ea1i c\u01b0\u01a1ng"
+    },
+    {
+        "ma": "815501",
+        "ten": "T\u00e2m l\u00fd h\u1ecdc ti\u1ec3u h\u1ecdc"
+    },
+    {
+        "ma": "867005",
+        "ten": "Qu\u1ea3n tr\u1ecb ngu\u1ed3n nh\u00e2n l\u1ef1c",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "834216",
+        "ten": "Ph\u01b0\u01a1ng ph\u00e1p x\u1eed l\u00fd s\u1ed1 li\u1ec7u m\u00f4i tr\u01b0\u1eddng",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "813406",
+        "ten": "Nghe - N\u00f3i 3"
+    },
+    {
+        "ma": "815508",
+        "ten": "Gi\u00e1o d\u1ee5c ngh\u1ec7 thu\u1eadt 1 (\u00c2m nh\u1ea1c)"
+    },
+    {
+        "ma": "834304",
+        "ten": "Vi sinh m\u00f4i tr\u01b0\u1eddng"
+    },
+    {
+        "ma": "865001",
+        "ten": "Ti\u1ebfng Vi\u1ec7t th\u1ef1c h\u00e0nh",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "866101",
+        "ten": "Ti\u1ebfng Anh I",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "811078",
+        "ten": "Th\u1ef1c h\u00e0nh s\u01b0 ph\u1ea1m 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "BODA11",
+        "ten": "B\u00f3ng \u0111\u00e1 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "858007",
+        "ten": "Kinh t\u1ebf h\u1ecdc \u0111\u1ea1i c\u01b0\u01a1ng"
+    },
+    {
+        "ma": "863013",
+        "ten": "C\u00f4ng t\u00e1c \u0111\u1ed9i TNTP HCM",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "809306",
+        "ten": "Khuynh h\u01b0\u1edbng v\u0103n h\u1ecdc v\u00e0 lo\u1ea1i h\u00ecnh t\u00e1c gi\u1ea3 v\u0103n h\u1ecdc trung \u0111\u1ea1i Vi\u1ec7t Nam"
+    },
+    {
+        "ma": "864006",
+        "ten": "Gi\u1ea3i t\u00edch 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "838098",
+        "ten": "Th\u1ef1c t\u1eadp t\u1ed1t nghi\u1ec7p (DTA) (DAN)",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "862408",
+        "ten": "Gi\u00e1o d\u1ee5c qu\u1ed1c ph\u00f2ng v\u00e0 an ninh III"
+    },
+    {
+        "ma": "841109",
+        "ten": "C\u01a1 s\u1edf d\u1eef li\u1ec7u",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "867009",
+        "ten": "Qu\u1ea3n tr\u1ecb h\u1ecdc"
+    },
+    {
+        "ma": "851498",
+        "ten": "Th\u1ef1c t\u1eadp t\u1ed1t nghi\u1ec7p (DKD)"
+    },
+    {
+        "ma": "865003",
+        "ten": "L\u1ecbch s\u1eed v\u0103n minh Th\u1ebf gi\u1edbi",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "809311",
+        "ten": "Ng\u1eef ph\u00e1p ti\u1ebfng Vi\u1ec7t t\u1eeb l\u00ed thuy\u1ebft \u0111\u1ebfn s\u1eed d\u1ee5ng"
+    },
+    {
+        "ma": "864508",
+        "ten": "X\u00e1c su\u1ea5t th\u1ed1ng k\u00ea"
+    },
+    {
+        "ma": "801504",
+        "ten": "Gi\u1ea3i t\u00edch h\u00e0m bi\u1ebfn th\u1ef1c III"
+    },
+    {
+        "ma": "816433",
+        "ten": "K\u00fd x\u01b0\u1edbng \u00e2m 3"
+    },
+    {
+        "ma": "867003",
+        "ten": "Ph\u00e1p lu\u1eadt kinh doanh",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "803124",
+        "ten": "Th\u1ef1c h\u00e0nh s\u01b0 ph\u1ea1m THPT 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "834371",
+        "ten": "An to\u00e0n lao \u0111\u1ed9ng v\u00e0 v\u1ec7 sinh m\u00f4i tr\u01b0\u1eddng c\u00f4ng nghi\u1ec7p"
+    },
+    {
+        "ma": "861304",
+        "ten": "T\u01b0 t\u01b0\u1edfng H\u1ed3 Ch\u00ed Minh"
+    },
+    {
+        "ma": "841022",
+        "ten": "H\u1ec7 \u0111i\u1ec1u h\u00e0nh",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "861305",
+        "ten": "L\u1ecbch s\u1eed \u0110\u1ea3ng C\u1ed9ng s\u1ea3n Vi\u1ec7t Nam"
+    },
+    {
+        "ma": "819402",
+        "ten": "\u00c2m nh\u1ea1c m\u1ea7m non"
+    },
+    {
+        "ma": "867006",
+        "ten": "Quy ho\u1ea1ch tuy\u1ebfn t\u00ednh",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "822511",
+        "ten": "Ph\u01b0\u01a1ng ph\u00e1p nghi\u00ean c\u1ee9u khoa h\u1ecdc L\u1ecbch s\u1eed v\u00e0 \u0110\u1ecba l\u00ed"
+    },
+    {
+        "ma": "806023",
+        "ten": "PPDH Sinh h\u1ecdc THPT 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "833502",
+        "ten": "\u1ee8ng d\u1ee5ng c\u00f4ng ngh\u1ec7 th\u00f4ng tin trong kinh doanh"
+    },
+    {
+        "ma": "850439",
+        "ten": "Th\u1ef1c h\u00e0nh vi \u0111i\u1ec1u khi\u1ec3n"
+    },
+    {
+        "ma": "842059",
+        "ten": "Qu\u1ea3n tr\u1ecb r\u1ee7i ro t\u00e0i ch\u00ednh",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "863005",
+        "ten": "Gi\u00e1o d\u1ee5c h\u1ecdc \u0111\u1ea1i c\u01b0\u01a1ng",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "864005",
+        "ten": "Gi\u1ea3i t\u00edch 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "862406",
+        "ten": "Gi\u00e1o d\u1ee5c qu\u1ed1c ph\u00f2ng v\u00e0 an ninh I"
+    },
+    {
+        "ma": "850407",
+        "ten": "Linh ki\u1ec7n v\u00e0 m\u1ea1ch \u0111i\u1ec7n t\u1eed 2"
+    },
+    {
+        "ma": "BODA12",
+        "ten": "B\u00f3ng \u0111\u00e1 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "846303",
+        "ten": "Qu\u1ea3n l\u00ed HCNN & qu\u1ea3n l\u00ed ng\u00e0nh GD-\u0110T",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "841404",
+        "ten": "M\u1ea1ng m\u00e1y t\u00ednh"
+    },
+    {
+        "ma": "834471",
+        "ten": "Sinh th\u00e1i m\u00f4i tr\u01b0\u1eddng v\u00e0 \u0111a d\u1ea1ng sinh h\u1ecdc"
+    },
+    {
+        "ma": "835120",
+        "ten": "Th\u1ef1c t\u1ebf Vi\u1ec7t Nam 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "859401",
+        "ten": "Qu\u1ea3n tr\u1ecb ngu\u1ed3n nh\u00e2n l\u1ef1c trong l\u0129nh v\u1ef1c nh\u00e0 h\u00e0ng v\u00e0 d\u1ecbch v\u1ee5 \u0103n u\u1ed1ng"
+    },
+    {
+        "ma": "863408",
+        "ten": "T\u1ed5 ch\u1ee9c H\u0110 d\u1ea1y h\u1ecdc & GD \u1edf tr\u01b0\u1eddng trung h\u1ecdc"
+    },
+    {
+        "ma": "810421",
+        "ten": "H\u1ec7 th\u1ed1ng ph\u01b0\u01a1ng ph\u00e1p v\u00e0 c\u00e1c h\u00ecnh th\u1ee9c t\u1ed5 ch\u1ee9c d\u1ea1y h\u1ecdc L\u1ecbch s\u1eed"
+    },
+    {
+        "ma": "811057",
+        "ten": "\u0110\u1ecba l\u00fd t\u1ef1 nhi\u00ean Vi\u1ec7t Nam 1",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "865005",
+        "ten": "Logic h\u1ecdc",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "848011",
+        "ten": "Th\u1ed1ng k\u00ea \u1ee9ng d\u1ee5ng",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "BOBA12",
+        "ten": "B\u00f3ng b\u00e0n 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "863404",
+        "ten": "TLH l\u1ee9a tu\u1ed5i trung h\u1ecdc v\u00e0 TLH s\u01b0 ph\u1ea1m"
+    },
+    {
+        "ma": "803106",
+        "ten": "H\u00f3a ph\u00e2n t\u00edch 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "853008",
+        "ten": "T\u00e2m l\u00ed h\u1ecdc ph\u00e1t tri\u1ec3n",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "854336",
+        "ten": "Ph\u01b0\u01a1ng ph\u00e1p NCKH ng\u00e0nh Qu\u1ed1c t\u1ebf h\u1ecdc"
+    },
+    {
+        "ma": "802024",
+        "ten": "Quang h\u1ecdc",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "832051",
+        "ten": "K\u1ebf to\u00e1n t\u00e0i ch\u00ednh 2",
+        "ten_eg": "                              "
+    },
+    {
+        "ma": "813313",
+        "ten": "L\u00fd lu\u1eadn d\u1ea1y h\u1ecdc ti\u1ebfng Anh 2"
+    }
+]

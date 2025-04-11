@@ -114,9 +114,9 @@ def gc(P, k):
     return my_btoa(T.encode('utf-8').decode("utf-8"))
 
 class HocPhan:
-    def __init__(self, id_to_hoc, email, auth, username = None, password = None):
+    def __init__(self, id_to_hoc, id, auth, username = None, password = None):
         self.id_to_hoc = id_to_hoc
-        self.email = email
+        self.id = id
         self.auth = auth
         self.username = username
         self.password = password
@@ -126,9 +126,9 @@ class HocPhan:
 
     def thongbao(self):
         if self.is_thanh_cong and "Trùng TKB MH" not in self.result:
-            logging.info(f"Thành công: {self.id_to_hoc} - {self.result} - {self.email}")
+            logging.info(f"Thành công: {self.id_to_hoc} - {self.result} - {self.id}")
         else:
-            logging.warning(f"Không thành công: {self.id_to_hoc} - {self.result} - {self.email}")
+            logging.warning(f"Không thành công: {self.id_to_hoc} - {self.result} - {self.id}")
             pass
 
     async def xulydkmhsinhvien(self, session):
@@ -157,14 +157,14 @@ class HocPhan:
                         if data.get("is_thanh_cong"):
                             self.is_thanh_cong = True
                             self.result = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
-                            await send_to_google_form(self.id_to_hoc, self.email, self.result)
+                            await send_to_google_form(self.id_to_hoc, self.id, self.result)
                             return
                         else:
                             self.result = data.get('thong_bao_loi', "Lỗi không xác định")
                             if "Trùng TKB MH" in self.result:
-                                print(f" {self.id_to_hoc} + {self.result} + {self.email}")
+                                print(f" {self.id_to_hoc} + {self.result} + {self.id}")
                                 self.is_thanh_cong = True
-                                await send_to_google_form(self.id_to_hoc, self.email, self.result, True)
+                                await send_to_google_form(self.id_to_hoc, self.id, self.result, True)
                     elif response.status == 401:
                         print(f"{self.username} het han auth!")
                     else:
@@ -285,7 +285,7 @@ async def main():
             continue
 
         timeout = aiohttp.ClientTimeout(total=300)
-        semaphore = asyncio.Semaphore(3)
+        semaphore = asyncio.Semaphore(14)
 
         async def with_semaphore(coro):
             async with semaphore:
