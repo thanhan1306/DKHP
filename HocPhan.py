@@ -36,35 +36,29 @@ async def chuyennhomdhsp(id_to_hoc, mail, auth):
                 print(f"Lỗi xảy ra -n{mail}: {e}")
             await asyncio.sleep(2)
 
-async def send_to_google_form(id, mail, resu,trung=False):
-    form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdy1I_tbmyzY_rVJad_ijNwqegeuWCN4BgIVyT0UvtlGzFmGw/formResponse"
+async def send_to_google_form(id, id_to_hoc, result,trung=False):
+    form_url = "https://docs.google.com/forms/d/e/1FAIpQLScPSvuYFFJkqthsQN8nGmdi-hQOQU_2qQ98EkQPGb4TuG7QfA/formResponse"
+
     form_payload = {
-        'entry.61085827': f"'{str(id)}",
-        'entry.1986856884': f'{mail}',
-        'entry.1653873326': f'{resu[:19]}',
-        'entry.1676601180': '4'
+        'entry.31662442': f"{str(id)}",
+        'entry.955688115': f"{str(id_to_hoc)}",
+        'entry.963488546': 'Trùng lịch!' if trung else 'Thành công!',
+        'entry.645101552': result[4:33] if trung else result[:19]
     }
-    if trung:
-        form_url = "https://docs.google.com/forms/d/e/1FAIpQLSeAdQzISjnwVYOa9owK2EbjjD7Jwilaj-O2P10YanjI7xLfrQ/formResponse"
-        form_payload = {
-            'entry.1535809202': f"'{str(id)}",
-            'entry.2125679044': f'{mail}',
-            'entry.196628364': f'{resu[4:33]}',
-            'entry.653882450': '4'
-        }
 
     async with aiohttp.ClientSession() as session:
         try:
             async with session.post(form_url, data=form_payload) as form_response:
                 if form_response.status == 200:
                     if trung:
-                        print(f"User: {mail} bị trùng lịch {resu[4:33]}!")
+                        print(f"Lenh: {id} bị trùng lịch {result[4:33]}!")
                     else:
-                        print(f"User: {mail} đăng ký thành công {id} lúc {resu[:19]}!")
+                        print(f"Lenh: {id} đăng ký thành công {id} lúc {result[:19]}!")
                 else:
                     print(f"Lỗi khi gửi yêu cầu đến Google Forms: {form_response.status}")
         except Exception as e:
             print(f"Lỗi khi gửi yêu cầu đến Google Forms: {e}")
+
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -157,14 +151,14 @@ class HocPhan:
                         if data.get("is_thanh_cong"):
                             self.is_thanh_cong = True
                             self.result = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
-                            await send_to_google_form(self.id_to_hoc, self.id, self.result)
+                            await send_to_google_form(self.id, self.id_to_hoc, self.result)
                             return
                         else:
                             self.result = data.get('thong_bao_loi', "Lỗi không xác định")
                             if "Trùng TKB MH" in self.result:
                                 print(f" {self.id_to_hoc} + {self.result} + {self.id}")
                                 self.is_thanh_cong = True
-                                await send_to_google_form(self.id_to_hoc, self.id, self.result, True)
+                                await send_to_google_form(self.id, self.id_to_hoc, self.result, True)
                     elif response.status == 401:
                         print(f"{self.username} het han auth!")
                     else:
@@ -271,13 +265,13 @@ async def main():
                 if not line:
                     continue
                 data = line.split('|')
-                if len(data) < 3:
+                """if len(data) < 3:
                     logging.error(f"Dòng không hợp lệ (bỏ qua): {line}")
-                    continue
+                    continue"""
                 # Nếu id_to_hoc đã được xử lý, bỏ qua
                 if data[0] in processed_ids:
                     continue
-                hoc_phans.append(HocPhan(data[0], data[1], data[2], data[3], data[4]))
+                hoc_phans.append(HocPhan(data[0], data[1], data[2]))
 
         if not hoc_phans:
             logging.info("Không còn phần tử để xử lý.")
