@@ -116,9 +116,42 @@ class HocPhan:
         self.auth = auth
         self.username = username
         self.password = password
+        self.login_status = True
         self.ex = datetime.now() + timedelta(hours=1.5)
         self.is_thanh_cong = False
         self.result = ""
+
+    async def login(self, session):
+        if self.is_thanh_cong:
+            return
+        url = "https://thongtindaotao.sgu.edu.vn/api/auth/login"
+        payload = {
+            "username": self.username,
+            "password": self.password,
+            "grant_type": "password"
+        }
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "ua": f"{gc('auth/login', -2132)}"
+        }
+        for attempt in range(3):
+            try:
+                async with session.post(url, headers=headers, data=payload) as response:
+                    if response.status == 200:
+                        response_data = await response.json()
+                        self.auth = "bearer " + response_data["access_token"]
+                        #self.ex = datetime.now() + timedelta(hours=1.5)
+                        self.login_status = True
+                        print(f"{self.username}: Login Successful!")
+                        update_auth_in_file(self.id, self.auth)
+                        return
+                    else:
+                        self.login_status = False
+            except Exception as e:
+                self.result = f"Lỗi xảy ra khi login: {e}"
+            await asyncio.sleep(2)
+        self.thongbao()
 
     def thongbao(self):
         if self.is_thanh_cong and "Trùng TKB MH" not in self.result:
@@ -165,6 +198,10 @@ class HocPhan:
                                 await send_to_google_form(self.id, self.id_to_hoc, self.result, "Hết slot!")"""
                     elif response.status == 401:
                         print(f"{self.username} het han auth!")
+                        await self.login(session)  # Re-login with the session
+                        if not self.login_status:
+                            print("Login failed, aborting operation.")
+                            break  # Exit if login failed after retry
                     else:
                         self.result = f"Lỗi HTTP: {response.status}"
             except Exception as e:
@@ -172,34 +209,7 @@ class HocPhan:
             await asyncio.sleep(2)
         self.thongbao()
 
-    async def login(self, session):
-        if self.is_thanh_cong:
-            return
-        url = "https://thongtindaotao.sgu.edu.vn/api/auth/login"
-        payload = {
-            "username": self.username,
-            "password": self.password,
-            "grant_type": "password"
-        }
-        headers = {
-            "Accept": "application/json, text/plain, */*",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "ua": f"{gc('auth/login', -2132)}"
-        }
-        for attempt in range(3):
-            try:
-                async with session.post(url, headers=headers, data=payload) as response:
-                    if response.status == 200:
-                        response_data = await response.json()
-                        self.auth = "bearer " + response_data["access_token"]
-                        self.ex = datetime.now() + timedelta(hours=1.5)
-                        print(f"{self.username}: Login Successful!")
-                    else:
-                        self.result = f"Lỗi HTTP login: {response.status}"
-            except Exception as e:
-                self.result = f"Lỗi xảy ra: {e}"
-            await asyncio.sleep(2)
-        self.thongbao()
+
 
     async def RegistSchedule(self, session):
         if self.is_thanh_cong:
@@ -256,6 +266,18 @@ class HocPhan:
             await asyncio.sleep(2)
 
 
+def update_auth_in_file(id, new_auth):
+    lines = []
+    with open("datas.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split('|')
+            if len(parts) >= 5 and parts[1] == id:
+                parts[2] = new_auth  # Cập nhật auth
+                lines.append('|'.join(parts) + '\n')
+            else:
+                lines.append(line if line.endswith('\n') else line + '\n')
+    with open("datas.txt", "w", encoding="utf-8") as f:
+        f.writelines(lines)
 
 
 async def main():
@@ -275,7 +297,7 @@ async def main():
                 # Nếu id_to_hoc đã được xử lý, bỏ qua
                 if data[0] in processed_ids:
                     continue
-                hoc_phans.append(HocPhan(data[0], data[1], data[2]))
+                hoc_phans.append(HocPhan(data[0], data[1], data[2], data[3], data[4]))
 
         if not hoc_phans:
             logging.info("Không còn phần tử để xử lý.")
