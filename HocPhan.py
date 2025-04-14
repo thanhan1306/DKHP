@@ -263,7 +263,7 @@ async def main():
     while True:
         hoc_phans = []
         #hoc_phans = [HocPhan("2421PRIM170602","BE NGUYEN","bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjQ4LjAxLjkwMS4xNTUiLCJOYW1lIjoiVHLhuqduIE5n4buNYyBUaOG6o28gTmd1ecOqbiIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6Iks0ODcxNDAyMDIiLCJuYmYiOjE3MzM5NjYzNTEsImV4cCI6MTczMzk3MzU1MSwiaWF0IjoxNzMzOTY2MzUxLCJpc3MiOiJQU0NVSVNBcGkiLCJhdWQiOiJoY211ZSJ9.XD-rhPxyzuoR0duShvYaV7sW2Nd1BRASef6FkdZ9CbY",True)]
-        with open("data", mode="r", encoding="utf-8") as f:
+        with open("datas.txt", mode="r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line:
