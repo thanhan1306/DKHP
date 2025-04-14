@@ -152,7 +152,7 @@ class HocPhan:
                         if data.get("is_thanh_cong"):
                             self.is_thanh_cong = True
                             self.result = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
-                            await send_to_google_form(self.id, self.id_to_hoc, self.result[:19], "Thành công!")
+                            await send_to_google_form(self.id, self.id_to_hoc, self.result[:30], "Thành công!")
                             return
                         else:
                             self.result = data.get('thong_bao_loi', "Lỗi không xác định")
