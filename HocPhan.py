@@ -36,24 +36,26 @@ async def chuyennhomdhsp(id_to_hoc, mail, auth):
                 print(f"Lỗi xảy ra -n{mail}: {e}")
             await asyncio.sleep(2)
 
-async def send_to_google_form(id, id_to_hoc, result,trung=False):
+async def send_to_google_form(id, id_to_hoc, result, status):
     form_url = "https://docs.google.com/forms/d/e/1FAIpQLScPSvuYFFJkqthsQN8nGmdi-hQOQU_2qQ98EkQPGb4TuG7QfA/formResponse"
 
     form_payload = {
         'entry.31662442': f"{str(id)}",
         'entry.955688115': f"{str(id_to_hoc)}",
-        'entry.963488546': 'Trùng lịch!' if trung else 'Thành công!',
-        'entry.645101552': result[4:33] if trung else result[:19]
+        'entry.963488546': f'{status}',
+        'entry.645101552': f'{result}',
     }
 
     async with aiohttp.ClientSession() as session:
         try:
             async with session.post(form_url, data=form_payload) as form_response:
                 if form_response.status == 200:
-                    if trung:
-                        print(f"Lenh: {id} bị trùng lịch {result[4:33]}!")
+                    if status == "Thành công!":
+                        print(f"Lenh: {id} đăng ký thành công {id} lúc {result}!")
+                    elif status == "Trùng lịch!":
+                        print(f"Lenh: {id} bị trùng lịch {result}!")
                     else:
-                        print(f"Lenh: {id} đăng ký thành công {id} lúc {result[:19]}!")
+                        print(f"Lenh: {id} hết slot {result}!")
                 else:
                     print(f"Lỗi khi gửi yêu cầu đến Google Forms: {form_response.status}")
         except Exception as e:
@@ -123,7 +125,6 @@ class HocPhan:
             logging.info(f"Thành công: {self.id_to_hoc} - {self.result} - {self.id}")
         else:
             logging.warning(f"Không thành công: {self.id_to_hoc} - {self.result} - {self.id}")
-            pass
 
     async def xulydkmhsinhvien(self, session):
         if self.is_thanh_cong:
@@ -151,14 +152,17 @@ class HocPhan:
                         if data.get("is_thanh_cong"):
                             self.is_thanh_cong = True
                             self.result = data.get("ket_qua_dang_ky", {}).get("ngay_dang_ky", "Không có thông tin ngày đăng ký")
-                            await send_to_google_form(self.id, self.id_to_hoc, self.result)
+                            await send_to_google_form(self.id, self.id_to_hoc, self.result[:19], "Thành công!")
                             return
                         else:
                             self.result = data.get('thong_bao_loi', "Lỗi không xác định")
                             if "Trùng TKB MH" in self.result:
                                 print(f" {self.id_to_hoc} + {self.result} + {self.id}")
                                 self.is_thanh_cong = True
-                                await send_to_google_form(self.id, self.id_to_hoc, self.result, True)
+                                await send_to_google_form(self.id, self.id_to_hoc, self.result[4:23], "Trùng lịch!")
+                            """if "Vui lòng" in self.result:
+                                print(f" {self.id_to_hoc} + {self.result} + {self.id}")
+                                await send_to_google_form(self.id, self.id_to_hoc, self.result, "Hết slot!")"""
                     elif response.status == 401:
                         print(f"{self.username} het han auth!")
                     else:
