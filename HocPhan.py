@@ -124,7 +124,7 @@ class HocPhan:
     async def login(self, session):
         if self.is_thanh_cong:
             return
-        url = "https://thongtindaotao.sgu.edu.vn/api/auth/login"
+        url = "https://thongtindaotao.daihocsaigon.edu.vn/api/auth/login"
         payload = {
             "username": self.username,
             "password": self.password,
@@ -162,7 +162,7 @@ class HocPhan:
     async def xulydkmhsinhvien(self, session):
         if self.is_thanh_cong:
             return
-        url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-xulydkmhsinhvien"
+        url = "https://thongtindaotao.daihocsaigon.edu.vn/dkmh/api/dkmh/w-xulydkmhsinhvien"
         payload = {
             "filter": {
                 "id_to_hoc": "-"+self.id_to_hoc,

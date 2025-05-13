@@ -3,8 +3,14 @@ import re
 import random
 import time
 import base64
+import gzip
+import io
 import requests
 import pandas as pd
+import brotli
+import json
+
+
 
 def open_array(filename):
   try:
@@ -115,7 +121,7 @@ class User:
         self.offset = -2132
 
     def login(self):
-        url = "https://thongtindaotao.sgu.edu.vn/api/auth/login"
+        url = "https://thongtindaotao.daihocsaigon.edu.vn/api/auth/login"
         payload = f"username={self.username}&password={self.password}&grant_type=password"
         # Headers
         headers = {
@@ -125,8 +131,8 @@ class User:
             "Content-length" : "59",
             "Content-Type": "text/plain",
             "Idpc": "0",
-            "Origin": "https://thongtindaotao.sgu.edu.vn",
-            "Referer": "https://thongtindaotao.sgu.edu.vn/",
+            #"Origin": "https://thongtindaotao.daihocsaigon.edu.vn",
+            #"Referer": "https://thongtindaotao.daihocsaigon.edu.vn/",
             "sec-ch-ua-mobile": "?0",
             "sec-ch-ua-platform": '"Windows"',
             "sec-fetch-dest": "empty",
@@ -136,6 +142,8 @@ class User:
       }
 
         response = requests.post(url, headers=headers, data=payload)
+
+
         if response.status_code == 200:
             response = response.json()
             self.auth = "bearer " + response["access_token"]
@@ -207,7 +215,7 @@ class User:
         return False
 
     def locdsnhomto(self):
-        url = "https://thongtindaotao.sgu.edu.vn/dkmh/api/dkmh/w-locdsnhomto"
+        url = "https://thongtindaotao.daihocsaigon.edu.vn/dkmh/api/dkmh/w-locdsnhomto"
         payload = '{"is_CVHT":false,"additional":{"paging":{"limit":99999,"page":1},"ordering":[{"name":"","order_type":""}]}}'
         # Headers
         headers = {
@@ -218,8 +226,8 @@ class User:
             "Content-length": "107",
             "Content-Type": "application/json",
             "Idpc": f"{self.idpc}",
-            "Origin": "https://thongtindaotao.sgu.edu.vn",
-            "Referer": "https://thongtindaotao.sgu.edu.vn/",
+            #"Origin": "https://thongtindaotao.sgu.edu.vn",
+            #"Referer": "https://thongtindaotao.sgu.edu.vn/",
             #"sec-ch-ua": '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
             "sec-ch-ua-mobile": "?0",
             "sec-ch-ua-platform": '"Windows"',
@@ -380,13 +388,13 @@ while True:
             print("SUCCESS")
     elif i == "4":
         if user1.locdsnhomto():
-            save_array(user1.ds_mon,"ds_mon11_4_25.json")
+            save_array(user1.ds_mon,"json/ds_mon5_5_25.json")
             df = pd.DataFrame(user1.ds_mon)
-            df.to_csv("DS_MON11_4_25.csv", index=False, encoding='utf-8-sig')
+            df.to_csv("csv/DS_MON5_5_25.csv", index=False, encoding='utf-8-sig')
 
-            save_array(user1.dsnhomto, "ds_nhom_to11_4_25.json")
+            save_array(user1.dsnhomto, "json/ds_nhom_to5_5_25.json")
             df = pd.DataFrame(user1.dsnhomto)
-            df.to_csv("DSNHOMTO11_4_25.csv", index=False, encoding='utf-8-sig')
+            df.to_csv("csv/DSNHOMTO5_5_25.csv", index=False, encoding='utf-8-sig')
             print("SUCCESS")
     elif i == "5":
         if user1.locdsmonnguyenvong():
